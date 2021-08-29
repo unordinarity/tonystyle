@@ -1,4 +1,5 @@
 import { createApi, createStore } from 'effector'
+
 import { schemeSupportMediaQuery } from './utils'
 
 export interface ColorScheme {
@@ -8,6 +9,9 @@ export interface ColorScheme {
 }
 
 const colorSchemeList: ReadonlyArray<ColorScheme> = [{
+  id: 'auto',
+  displayName: 'System',
+}, {
   id: 'light',
   displayName: 'Light',
   mediaQuery: 'prefers-color-scheme: light',
