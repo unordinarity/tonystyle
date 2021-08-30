@@ -1,11 +1,11 @@
 ### Hand-made section
 
-# IDEA-based IDE project folder
-.idea
-
 # Lockfiles
 yarn.lock
 package-lock.json
+
+# IDEA Discord plugin
+.idea/**/discord.xml
 
 ### Windows template
 # Windows thumbnail cache files
