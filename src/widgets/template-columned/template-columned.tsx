@@ -1,5 +1,4 @@
 import React, { FunctionComponent, ReactElement } from 'react'
-import { Head } from 'next/document'
 
 import { HeaderFilled } from '../header-filled/header-filled'
 
