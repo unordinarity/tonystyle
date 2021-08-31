@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
@@ -24,7 +24,7 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
     "next": "^11.1.0",
-    "typescript": "^4.3.5",
-    "type-fest": "^2.1.0"
+    "type-fest": "^2.1.0",
+    "typescript": "^4.3.5"
   }
 }

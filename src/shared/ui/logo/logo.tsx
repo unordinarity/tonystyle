@@ -1,12 +1,11 @@
 import React, { FunctionComponent } from 'react'
-
-import logoUrl from '../../assets/logo-transparent-white.png'
+import Image from 'next/image'
 
 import styles from './logo.module.css'
 
 export const Logo: FunctionComponent = () => (
-  <img
-    src={logoUrl.src}
+  <Image
+    src="logo-transparent-white.png"
     alt="logo"
     className={styles.logo}
   />
