@@ -1,6 +1,10 @@
 import React, { FunctionComponent, ReactElement } from 'react'
+import { Helmet } from 'react-helmet'
 
-import { HeaderFilled } from '../header-filled/header-filled'
+import faviconTransparentWhite from '../../shared/assets/favicon-transparent-white.png'
+
+import { HeaderFilled } from '../header-filled'
+import { FooterFilled } from '../footer-filled'
 
 interface ColumnedTemplateProps {
   head?: ReactElement,
@@ -12,9 +16,14 @@ export const TemplateColumned: FunctionComponent<ColumnedTemplateProps> = ({
   content,
 }) => (
   <>
-    <Head>
+    <Helmet>
+      <link
+        rel="icon"
+        href={faviconTransparentWhite}
+        type="image/x-icon"
+      />
       {head}
-    </Head>
+    </Helmet>
 
     <HeaderFilled />
 
@@ -24,8 +33,6 @@ export const TemplateColumned: FunctionComponent<ColumnedTemplateProps> = ({
 
     <hr />
 
-    <footer>
-      Copyright
-    </footer>
+    <FooterFilled />
   </>
 )

@@ -1,9 +1,8 @@
-import React from 'react'
-import { NextPage } from 'next'
+import React, { FunctionComponent } from 'react'
 
 import { TemplateColumned } from '../../widgets/template-columned'
 
-export const HomePage: NextPage = () => {
+export const HomePage: FunctionComponent = () => {
   return (
     <TemplateColumned
       head={(

@@ -1,7 +1,18 @@
 import React, { FunctionComponent } from 'react'
 
+import { TemplateColumned } from '../../widgets/template-columned'
+
 export const NotFoundPage: FunctionComponent = () => (
-  <h1>
-    404 - page not found
-  </h1>
+  <TemplateColumned
+    content={(
+      <>
+        <h1>
+          404
+        </h1>
+        <p>
+          Page not found
+        </p>
+      </>
+    )}
+  />
 )

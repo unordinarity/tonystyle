@@ -1,1 +1,1 @@
-export { } from './footer'
+export { FooterEmpty } from './footer-empty'
