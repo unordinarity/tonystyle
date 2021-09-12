@@ -13,19 +13,21 @@ interface Props {
 
 export const HeaderEmpty: FunctionComponent<Props> = ({
   className,
-  firstSide,
+  firstSide = ' ',
   center,
-  lastSide,
+  lastSide = ' ',
 }) => (
-  <header className={clsx(styles.header, className)}>
-    <div className={styles.headerSection}>
-      {firstSide}
-    </div>
-    <div className={styles.headerSection}>
-      {center}
-    </div>
-    <div className={styles.headerSection}>
-      {lastSide}
+  <header className={clsx(styles.container, className)}>
+    <div className={styles.content}>
+      <div className={styles.section}>
+        {firstSide}
+      </div>
+      <div className={styles.section}>
+        {center}
+      </div>
+      <div className={styles.section}>
+        {lastSide}
+      </div>
     </div>
   </header>
 )

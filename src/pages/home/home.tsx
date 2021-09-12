@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 
-import { TemplateColumned } from '../../widgets/template-columned'
+import { TemplateColumned } from 'src/widgets/template-columned'
 
 export const HomePage: FunctionComponent = () => {
   return (

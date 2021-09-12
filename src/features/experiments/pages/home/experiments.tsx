@@ -1,7 +1,9 @@
 import React, { FunctionComponent } from 'react'
 
+import { TemplateColumned } from 'src/widgets/template-columned'
+
 export const ExperimentsPage: FunctionComponent = () => (
-  <h1>
-    404 - page not found
-  </h1>
+  <TemplateColumned
+
+  />
 )

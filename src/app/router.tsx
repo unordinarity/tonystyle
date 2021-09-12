@@ -1,9 +1,8 @@
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import { HomePage } from '../pages/home'
-import { ExperimentsPage } from '../pages/experiments-home'
-import { NotFoundPage } from '../pages/not-found'
+import { HomePage, NotFoundPage } from '../pages'
+import { ExperimentsPage } from '../features/experiments'
 
 export const Router: FunctionComponent = () => (
   <BrowserRouter>

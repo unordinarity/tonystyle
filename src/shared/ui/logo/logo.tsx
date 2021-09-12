@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 
-import logoTransparentWhite from '../../assets'
+import logoTransparentWhite from 'src/shared/assets/logo-transparent-white.png'
 
 import styles from './logo.module.css'
 

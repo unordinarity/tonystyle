@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
 import { FooterEmpty } from '../../shared/ui/footer-empty'
 
