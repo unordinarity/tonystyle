@@ -5,7 +5,6 @@ import { App } from './app'
 
 import 'src/shared/styles/reset.css'
 import 'src/shared/styles/reset-patch.css'
-import 'src/shared/styles/color-schemes.scss'
 import 'src/shared/styles/spa-sizing.css'
 
 render(
