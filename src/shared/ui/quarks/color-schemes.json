@@ -1,4 +1,7 @@
 {
+  "light-contrast": {
+
+  },
   "light": {
     "background": "#F0F0F0",
     "surface": "#F5F5F5",
@@ -18,6 +21,9 @@
     "text": "rgba(255, 255, 255, 0.8)"
   },
   "dark-amoled": {
+
+  },
+  "dark-contrast": {
 
   }
 }

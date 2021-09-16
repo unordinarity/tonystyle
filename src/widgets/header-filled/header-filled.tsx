@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
-import { HeaderEmpty } from '../../shared/ui/header-empty'
-import { Logo } from '../../shared/ui/logo/logo'
+import { HeaderEmpty } from '../../shared/components/header-empty'
+import { Logo } from '../../shared/components/logo/logo'
 
 interface Props {
   children?: never,

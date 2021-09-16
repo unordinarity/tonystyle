@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 
-import { FooterEmpty } from '../../shared/ui/footer-empty'
+import { FooterEmpty } from '../../shared/components/footer-empty'
 
 interface Props {
   children?: never,

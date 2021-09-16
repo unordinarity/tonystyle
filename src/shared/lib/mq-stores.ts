@@ -1,4 +1,4 @@
-import { createEvent, createStore, Store } from 'effector'
+import { createEvent, createStore } from 'effector'
 
 type MqStoreValue<Value> = Value | 'none' | 'auto'
 
@@ -38,8 +38,8 @@ export const mqReducedMotionStore = createMqStore<
 )
 
 export const mqDisplayModeStore = createMqStore<
-  'browser' | 'fullscreen' | 'standalone' | 'minimal-ui'
+  'browser' | 'fullscreen' | 'standalone' | 'minimal-components'
 >(
   'display-mode',
-  ['browser', 'fullscreen', 'standalone', 'minimal-ui']
+  ['browser', 'fullscreen', 'standalone', 'minimal-components']
 )

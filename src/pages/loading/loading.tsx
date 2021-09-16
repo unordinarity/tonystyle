@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import clsx from 'clsx'
 
-import { Spinner } from '../../shared/ui/spinner'
+import { Spinner } from '../../shared/components/spinner'
 
 import styles from './loading.module.css'
 
