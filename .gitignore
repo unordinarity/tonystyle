@@ -1,11 +1,15 @@
 ### Hand-made section
 
-# IDEA-based IDE project folder
-.idea
-
 # Lockfiles
 yarn.lock
 package-lock.json
+
+# IDEA Discord plugin
+.idea/**/discord.xml
+
+# IDEA inspections
+.idea/**/codeStyleConfig.xml
+.idea/**/inspectionProfiles/
 
 ### Windows template
 # Windows thumbnail cache files
@@ -310,4 +314,3 @@ bh_unicode_properties.cache
 # Sublime-github package stores a github token in this file
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
-

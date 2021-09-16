@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.section {
+  flex: 0 1 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+}
