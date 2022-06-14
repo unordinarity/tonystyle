@@ -11,6 +11,9 @@ package-lock.json
 .idea/**/codeStyleConfig.xml
 .idea/**/inspectionProfiles/
 
+# IDEA file tree
+.idea/**/highlightedFiles.xml
+
 ### Windows template
 # Windows thumbnail cache files
 Thumbs.db
