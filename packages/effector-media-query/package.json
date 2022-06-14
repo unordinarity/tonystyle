@@ -1,0 +1,22 @@
+{
+  "name": "@tonystyle/effector-media-query",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "peerDependencies": {
+    "effector": "^22.3.0"
+  },
+  "dependencies": {
+    "type-fest": "^2.13.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.2",
+    "rollup": "^2.75.6",
+    "rollup-plugin-dts": "^4.2.2",
+    "typescript": "^4.7.2"
+  }
+}
