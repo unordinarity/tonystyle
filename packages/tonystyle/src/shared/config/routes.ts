@@ -1,10 +1,7 @@
 import { createRoute } from 'atomic-router'
 
-export const routeMap = {
-  home: {
-    path: '/',
-    route: createRoute(),
-  },
+export const routes = {
+  home: createRoute(),
   about: {
     home: createRoute(),
     experience: createRoute(),
