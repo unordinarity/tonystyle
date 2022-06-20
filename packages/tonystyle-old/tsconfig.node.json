@@ -2,13 +2,10 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "composite": true,
-    "module": "CommonJS",
+    "module": "esnext",
     "moduleResolution": "node"
   },
   "include": [
-    "gatsby-browser.js",
-    "gatsby-config.js",
-    "gatsby-node.js",
-    "gatsby-ssr.js",
+    "vite.config.ts"
   ]
 }

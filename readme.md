@@ -9,12 +9,10 @@ Business card, CV, personal blog, petproject playground
 - styled with [stitches](https://stitches.dev/)
 - built by [vite](https://vitejs.dev/)
 
-Watch more in [packages.json](./package.json)
+# Packages
 
-# How to start
+- [background-svg-pattern](./packages/background-svg-pattern)
 
-`yarn` or `npm i` to install dependencies
+- [effector-media-query](./packages/effector-media-query) (effector wrapper for media queries matching)
 
-`yarn dev` or `npm run dev` to start
-
-Similarly, more in [packages.json](./package.json)
+- [tonystyle](./packages/tonystyle-old) (main package, application entry point)
