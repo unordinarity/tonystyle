@@ -103,7 +103,9 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
   "include": [
-    "./src"
-  ],
-  "references": [{ "path": "./tsconfig.node.json"}]
+    "./src/**/*",
+    "./gatsby-node.ts",
+    "./gatsby-config.ts",
+    "./plugins/**/*"
+  ]
 }

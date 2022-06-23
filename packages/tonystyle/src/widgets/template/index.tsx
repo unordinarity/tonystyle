@@ -9,7 +9,7 @@ import {
   mdiWeatherNight,
 } from '@mdi/js'
 
-import { stitches, Logo, footer, header } from 'src/shared/ui'
+import { stitches, Logo, footer, header, Button } from 'src/shared/ui'
 
 import './reset.css'
 import './reset-patch.css'
@@ -45,12 +45,12 @@ export const Template: FunctionComponent<Props> = ({
         <Logo />
       </header.Center>
       <header.Side>
-        <button><Icon path={mdiWeatherNight} size="32px" /></button>
-        <button><Icon path={mdiTranslate} size="32px" /></button>
-        <button><Icon path={mdiTwitter} size="32px" /></button>
-        <button><Icon path={mdiGithub} size="32px" /></button>
-        <button><Icon path={mdiInstagram} size="32px" /></button>
-        <button><Icon path={mdiRss} size="32px" /></button>
+        <Button><Icon path={mdiWeatherNight} size="32px" /></Button>
+        <Button><Icon path={mdiTranslate} size="32px" /></Button>
+        <Button><Icon path={mdiTwitter} size="32px" /></Button>
+        <Button><Icon path={mdiGithub} size="32px" /></Button>
+        <Button><Icon path={mdiInstagram} size="32px" /></Button>
+        <Button><Icon path={mdiRss} size="32px" /></Button>
       </header.Side>
     </header.Container>
     <Content>

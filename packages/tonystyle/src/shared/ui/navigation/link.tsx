@@ -1,7 +1,7 @@
-import { Link as AtomicRouterLink } from 'atomic-router-react'
+import { Link as GatsbyLink } from 'gatsby'
 
 import { stitches } from '../stitches'
 
-export const Link = stitches.styled(AtomicRouterLink, {
+export const Link = stitches.styled(GatsbyLink, {
 
 })
