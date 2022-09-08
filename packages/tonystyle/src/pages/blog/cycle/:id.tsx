@@ -2,12 +2,12 @@ import React, { FunctionComponent } from 'react'
 
 import { HelmetCommon } from 'src/widgets/helmet-common'
 
-const About: FunctionComponent = () => (
+const CycleId: FunctionComponent = () => (
   <>
-    <HelmetCommon title='About' />
+    <HelmetCommon title='PostId' />
 
-    <h1>About</h1>
+    <h1>CycleId</h1>
   </>
 )
 
-export default About
+export default CycleId

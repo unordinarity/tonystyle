@@ -1,23 +1,26 @@
-import { PostId } from './post'
+import { Post } from './post'
 
-export interface Tag {
-  id: string,
-  attributes: {
-    title: string,
-  },
-  relations: {
-    articles: Array<PostId>,
-  },
+export namespace Tag {
+  export interface Model {
+    id: string,
+    attributes: {
+      title: string,
+    },
+    relations: {
+      articles: Array<Post.Id>,
+    },
+  }
+
+  export type Id = Model['id']
+
+  export const list: Array<Model> = [{
+    id: '',
+    attributes: {
+      title: '',
+    },
+    relations: {
+      articles: []
+    },
+  }]
 }
 
-export type TagId = Tag['id']
-
-export const tags: Array<Tag> = [{
-  id: '',
-  attributes: {
-    title: '',
-  },
-  relations: {
-    articles: []
-  },
-}]

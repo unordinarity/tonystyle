@@ -1,39 +1,41 @@
-import { PostId } from './post'
+import { Post } from './post'
 
-export interface Category {
-  id: string,
-  attributes: {
-    title: string,
-  },
-  relations: {
-    article: Array<PostId>,
+export namespace Category {
+  export interface Model {
+    id: string,
+    attributes: {
+      title: string,
+    },
+    relations: {
+      article: Array<Post.Id>,
+    }
   }
+
+  export type Id = Model['id']
+
+  export const list: Array<Model> = [{
+    id: 'megapost',
+    attributes: {
+      title: 'Megapost'
+    },
+    relations: {
+      article: []
+    }
+  }, {
+    id: 'article',
+    attributes: {
+      title: 'Article'
+    },
+    relations: {
+      article: []
+    }
+  }, {
+    id: 'diary',
+    attributes: {
+      title: 'Diary'
+    },
+    relations: {
+      article: []
+    }
+  }]
 }
-
-export type CategoryId = Category['id']
-
-export const categories: Array<Category> = [{
-  id: 'megapost',
-  attributes: {
-    title: 'Megapost'
-  },
-  relations: {
-    article: []
-  }
-}, {
-  id: 'article',
-  attributes: {
-    title: 'Article'
-  },
-  relations: {
-    article: []
-  }
-}, {
-  id: 'diary',
-  attributes: {
-    title: 'Diary'
-  },
-  relations: {
-    article: []
-  }
-}]

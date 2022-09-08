@@ -10,7 +10,7 @@ export const createEnumMqStore = <V extends string>(
 
   if (window.matchMedia(`not all and (${mediaFeature}), (${mediaFeature})`)) {
     values.forEach(value => {
-      const mql = window.matchMedia(`${mediaFeature}: ${value}`)
+      const mql = window.matchMedia(`(${mediaFeature}: ${value})`)
       if (mql.matches) initialValue = value
       mql.addEventListener('change', event => {
         if (event.matches) storeSet(value)
@@ -18,5 +18,8 @@ export const createEnumMqStore = <V extends string>(
     })
   }
 
-  return createStore<V | null>(initialValue)
+  const store = createStore<V | null>(initialValue)
+  store.on(storeSet, (state, payload) => payload)
+
+  return store
 }

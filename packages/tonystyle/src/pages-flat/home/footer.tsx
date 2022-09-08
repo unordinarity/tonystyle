@@ -1,8 +1,9 @@
 import React, { ComponentProps, FunctionComponent } from 'react'
 import { mdiGithub, mdiInstagram, mdiLinkedin, mdiMail, mdiTwitter } from '@mdi/js'
 
-import { navigation } from './navigation'
 import { stitches } from 'src/shared/ui'
+
+import { navigation } from './navigation'
 
 const PointReversed = stitches.styled(navigation.Point, {
   flexDirection: 'row-reverse'

@@ -1,4 +1,4 @@
-import { stitches } from '../stitches'
+import { stitches } from 'src/shared/ui/stitches'
 
 export const Button = stitches.styled('button', {
   display: 'block',
