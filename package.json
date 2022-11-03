@@ -1,4 +1,5 @@
 {
+  "name": "tonystyle",
   "private": true,
   "dependencies": {
     "@commitlint/cli": "^17.0.3",

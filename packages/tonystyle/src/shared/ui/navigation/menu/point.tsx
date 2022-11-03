@@ -14,7 +14,8 @@ const Container = stitches.styled('div', {
   gap: '16px',
   padding: '0 16px',
 
-  backgroundColor: 'transparent',
+  fontFamily: '$title',
+
   color: 'inherit',
 
   variants: {
@@ -51,8 +52,8 @@ const Container = stitches.styled('div', {
 
   cursor: 'pointer',
 
-  transitionProperty: 'background-color, color',
-  transitionDuration: '0.25s',
+  transitionProperty: 'background-color, color, scale, rotate, box-shadow',
+  transitionDuration: '0.2s',
   transitionTimingFunction: 'ease-in-out',
 
   '&:hover': {

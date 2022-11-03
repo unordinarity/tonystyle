@@ -6,6 +6,7 @@ import { stitches } from 'src/shared/ui/stitches'
 import { Point } from './point'
 
 const ContainerStyled = stitches.styled(Point.Container, {
+  background: 'unset',
   appearance: 'none',
   border: 'none',
 })

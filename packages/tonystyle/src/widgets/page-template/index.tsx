@@ -53,8 +53,6 @@ const Content = stitches.styled('main', {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-
-  backgroundColor: '$primarySurface'
 })
 
 export const PageTemplate: FunctionComponent<ComponentProps<typeof Container>> = ({

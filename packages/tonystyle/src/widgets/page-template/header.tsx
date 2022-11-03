@@ -12,7 +12,7 @@ import { Menu } from 'src/shared/ui'
 
 export const Header: FunctionComponent<ComponentProps<typeof Menu.Section>> = (props) => (
   <Menu.Section {...props}>
-    <Menu.Anchor size='large' to='#' text='Tony.Style' />
+    <Menu.Anchor size='large' to='/' text='Tony.Style' />
     <Menu.Anchor to='/blog' icon={mdiBookOpenPageVariantOutline} text='Articles' />
     <Menu.Anchor to='/projects' icon={mdiFloppy} text='Projects' />
     <Menu.Anchor to='/services' icon={mdiHammerWrench} text='Services' />
