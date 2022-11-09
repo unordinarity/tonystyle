@@ -16,12 +16,17 @@ type Props = ComponentProps<typeof UiAnchor> & VariantProps<typeof Point.Contain
 }
 
 const activeCss = stitches.css({
-  background: `url(${paperTexture}), $secondarySurface`,
+  boxShadow: '0 0 8px 0 $colors$primaryBack',
   backgroundBlendMode: 'multiply',
   backfaceVisibility: 'hidden',
   scale: '1.07',
   rotate: 'z 2deg',
-  boxShadow: '0 0 8px 0 $colors$primaryBack',
+  '&:hover': {
+    background: `url(${paperTexture}), $tertiarySurface`,
+  },
+  '&:not(:hover)': {
+    background: `url(${paperTexture}), $secondarySurface`,
+  }
 })()
 
 export const Anchor: FunctionComponent<Props> = ({

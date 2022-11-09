@@ -41,7 +41,7 @@ export const HelmetCommon: FunctionComponent<Props> = ({
 
   return (
     <Helmet>
-      <title>{['Tony.Style', title].filter(elem => !!elem).join(' | ')}</title>
+      <title>{[title, 'Tony.Style'].filter(elem => !!elem).join(' | ')}</title>
       <meta property="description" content={description} />
 
       <link rel="icon" sizes="any" href={faviconClassic} />

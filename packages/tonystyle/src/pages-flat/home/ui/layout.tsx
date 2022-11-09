@@ -10,6 +10,11 @@ const Container = stitches.styled('div', {
 
   overflow: 'scroll',
   scrollSnapType: 'y mandatory',
+
+  scrollbarWidth: 'none',
+  '&::-webkit-scrollbar': {
+    display: 'none',
+  },
 })
 
 const SectionPlaceholder = stitches.styled('div', {
@@ -39,6 +44,7 @@ const SectionContent = stitches.styled('section', {
   right: 0,
 
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
 

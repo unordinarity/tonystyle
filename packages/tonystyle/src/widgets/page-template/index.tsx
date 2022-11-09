@@ -9,15 +9,22 @@ import { Settings } from './settings'
 const Container = stitches.styled('div', {
   width: '100%',
   height: '100%',
+  position: 'relative',
 
-  backgroundColor: '$primaryBack',
+  display: 'flex',
+  justifyContent: 'center',
+
+  $$sizePadding: '24px',
+  $$sizeGap: '48px',
+  $$sizeSidebar: '240px'
 })
 
 const FirstSide = stitches.styled('div', {
   position: 'fixed',
-  top: '24px',
-  left: '24px',
-  bottom: '24px',
+  insetInlineStart: '$$sizePadding',
+  insetBlock: '$$sizePadding',
+  inlineSize: '$$sizeSidebar',
+
   display: 'grid',
   gridTemplateAreas: '"header" "." "settings" "."',
   gridTemplateRows: 'auto 4fr auto 3fr',
@@ -25,9 +32,10 @@ const FirstSide = stitches.styled('div', {
 
 const LastSide = stitches.styled('div', {
   position: 'fixed',
-  top: '24px',
-  right: '24px',
-  bottom: '24px',
+  insetInlineEnd: '$$sizePadding',
+  insetBlock: '$$sizePadding',
+  inlineSize: '$$sizeSidebar',
+
   display: 'grid',
   gridTemplateAreas: '"." "footer"',
   gridTemplateRows: '1fr auto',
@@ -46,13 +54,34 @@ const FooterStyled = stitches.styled(Footer, {
 })
 
 const Content = stitches.styled('main', {
-  width: '100%',
-  minHeight: '100%',
-
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+
+  variants: {
+    size: {
+      limited: {
+        flexBasis: 'calc(100% - $$sizeSidebar * 2 - $$sizePadding * 2 - $$sizeGap * 2)',
+        height: 'calc(100% - $$sizePadding * 2)',
+      },
+      expanded: {
+        flexBasis: 'calc(100% - $$sizeSidebar - $$sizePadding * 2)',
+        height: 'calc(100% - $$sizePadding * 2)',
+      },
+      framed: {
+        flexBasis: 'calc(100% - $$sizePadding * 2)',
+        height: 'calc(100% - $$sizePadding * 2)',
+      },
+      full: {
+        flexBasis: '100%',
+        height: '100%',
+      }
+    }
+  },
+  defaultVariants: {
+    size: 'limited'
+  }
 })
 
 export const PageTemplate: FunctionComponent<ComponentProps<typeof Container>> = ({
@@ -60,6 +89,9 @@ export const PageTemplate: FunctionComponent<ComponentProps<typeof Container>> =
   ...props
 }) => (
   <Container {...props}>
+    <Content>
+      {children}
+    </Content>
     <FirstSide>
       <HeaderStyled />
       <SettingsStyled />
@@ -67,8 +99,5 @@ export const PageTemplate: FunctionComponent<ComponentProps<typeof Container>> =
     <LastSide>
       <FooterStyled />
     </LastSide>
-    <Content>
-      {children}
-    </Content>
   </Container>
 )
