@@ -1,4 +1,5 @@
 import React, { ComponentProps, FunctionComponent } from 'react'
+import { VariantProps } from '@stitches/react'
 
 import { stitches } from 'src/shared/ui'
 
@@ -10,9 +11,6 @@ const Container = stitches.styled('div', {
   width: '100%',
   height: '100%',
   position: 'relative',
-
-  display: 'flex',
-  justifyContent: 'center',
 
   $$sizePadding: '24px',
   $$sizeGap: '48px',
@@ -54,42 +52,52 @@ const FooterStyled = stitches.styled(Footer, {
 })
 
 const Content = stitches.styled('main', {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-
   variants: {
-    size: {
+    layoutHorizontal: {
       limited: {
-        flexBasis: 'calc(100% - $$sizeSidebar * 2 - $$sizePadding * 2 - $$sizeGap * 2)',
-        height: 'calc(100% - $$sizePadding * 2)',
+        marginInline: 'calc($$sizeSidebar + $$sizePadding + $$sizeGap)',
+        inlineSize: 'calc(100% - $$sizeSidebar * 2 - $$sizePadding * 2 - $$sizeGap * 2)',
       },
       expanded: {
-        flexBasis: 'calc(100% - $$sizeSidebar - $$sizePadding * 2)',
-        height: 'calc(100% - $$sizePadding * 2)',
+        marginInline: 'calc($$sizeSidebar / 2 + $$sizePadding)',
+        inlineSize: 'calc(100% - $$sizeSidebar - $$sizePadding * 2)',
       },
       framed: {
-        flexBasis: 'calc(100% - $$sizePadding * 2)',
-        height: 'calc(100% - $$sizePadding * 2)',
+        marginInline: 'calc($$sizePadding)',
+        inlineSize: 'calc(100% - $$sizePadding * 2)',
       },
       full: {
-        flexBasis: '100%',
+        marginInline: 0,
+        inlineSize: '100%',
+      },
+    },
+    layoutVertical: {
+      framed: {
+        marginBlock: 'calc($$sizePadding)',
+        blockSize: 'calc(100% - $$sizePadding * 2)',
+      },
+      full: {
+        marginBlock: 0,
         height: '100%',
-      }
-    }
+      },
+    },
   },
   defaultVariants: {
-    size: 'limited'
-  }
+    layoutHorizontal: 'limited',
+    layoutVertical: 'framed',
+  },
 })
 
-export const PageTemplate: FunctionComponent<ComponentProps<typeof Container>> = ({
+type Props = ComponentProps<typeof Container> & VariantProps<typeof Content>
+
+export const PageTemplate: FunctionComponent<Props> = ({
   children,
+  layoutHorizontal,
+  layoutVertical,
   ...props
 }) => (
   <Container {...props}>
-    <Content>
+    <Content layoutHorizontal={layoutHorizontal} layoutVertical={layoutVertical}>
       {children}
     </Content>
     <FirstSide>
