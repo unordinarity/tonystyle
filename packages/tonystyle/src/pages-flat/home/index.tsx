@@ -15,7 +15,7 @@ export const Home: FunctionComponent = () => (
         <p>{faker.lorem.paragraphs()}</p>
       </Layout.Section>
       <Layout.Section>
-        <h1>About</h1>
+        <h1>About me</h1>
         <p>{faker.lorem.paragraphs()}</p>
       </Layout.Section>
       <Layout.Section>

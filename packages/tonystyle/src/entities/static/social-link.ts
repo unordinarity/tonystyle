@@ -1,4 +1,4 @@
-import { mdiEmailOutline, mdiGithub, mdiInstagram, mdiLinkedin, mdiTwitter } from '@mdi/js'
+import { mdiEmailOutline, mdiGithub, mdiInstagram, mdiLinkedin, mdiSend, mdiTwitter } from '@mdi/js'
 import { IconProps } from '@mdi/react/dist/IconProps'
 
 export namespace SocialLink {
@@ -12,6 +12,10 @@ export namespace SocialLink {
     title: 'Twitter',
     icon: mdiTwitter,
     url: 'https://twitter.com/unordinarity',
+  }, {
+    title: 'Telegram',
+    icon: mdiSend,
+    url: 'https://t.me/unordinarity',
   }, {
     title: 'Github',
     icon: mdiGithub,

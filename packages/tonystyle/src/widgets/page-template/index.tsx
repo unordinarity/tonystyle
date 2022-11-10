@@ -10,11 +10,13 @@ import { Settings } from './settings'
 const Container = stitches.styled('div', {
   width: '100%',
   height: '100%',
-  position: 'relative',
+
+  // only to disable margin collapsing
+  display: 'flex',
 
   $$sizePadding: '24px',
   $$sizeGap: '48px',
-  $$sizeSidebar: '240px'
+  $$sizeSidebar: '240px',
 })
 
 const FirstSide = stitches.styled('div', {

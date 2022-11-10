@@ -18,6 +18,6 @@ export const Header: FunctionComponent<ComponentProps<typeof Menu.Section>> = (p
     <Menu.Anchor to='/services' icon={mdiHammerWrench} text='Services' />
     <Menu.Anchor to='/experience' icon={mdiRocketLaunchOutline} text='Experience' />
     <Menu.Anchor to='/uses' icon={mdiDevices} text='Uses' tip='Work setup, IDE...' />
-    <Menu.Anchor to='/personal' icon={mdiCoffeeOutline} text='Personal' />
+    <Menu.Anchor to='/about-me' icon={mdiCoffeeOutline} text='About me' />
   </Menu.Section>
 )
