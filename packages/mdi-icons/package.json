@@ -1,0 +1,12 @@
+{
+  "name": "@tonystyle/mdi-icons",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "",
+    "clean": ""
+  },
+  "dependencies": {
+    "typescript": "^4.7.4"
+  }
+}

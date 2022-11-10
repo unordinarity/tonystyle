@@ -11,9 +11,9 @@ export default defineConfig([{
   plugins: [...plugins],
   output: [{
     file: 'dist/index.js',
-    format: 'es',
+    format: 'esm',
   }],
-  external: ['effector']
+  external: ['effector', 'lodash-es']
 }, {
   input: 'src/index.ts',
   plugins: [...plugins, dts()],
@@ -21,5 +21,5 @@ export default defineConfig([{
     file: 'dist/index.d.ts',
     format: 'es',
   },
-  external: ['effector']
+  external: ['effector', 'lodash-es']
 }])

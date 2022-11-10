@@ -5,16 +5,16 @@
   "type": "module",
   "scripts": {},
   "peerDependencies": {
-    "react": "^18.1.0"
+    "react": "^18.2.0"
   },
   "dependencies": {
-    "@mdi/js": "^6.7.96",
+    "@mdi/js": "^6.9.96",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@types/lodash-es": "4.17.6",
-    "@types/react": "18.0.12",
-    "react": "^18.1.0",
-    "typescript": "^4.7.3"
+    "@types/react": "18.0.15",
+    "react": "^18.2.0",
+    "typescript": "^4.7.4"
   }
 }

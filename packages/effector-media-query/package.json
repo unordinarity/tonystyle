@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "types": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
@@ -11,12 +12,12 @@
     "effector": "^22.3.0"
   },
   "dependencies": {
-    "type-fest": "^2.13.0"
+    "type-fest": "^2.16.0"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.3.2",
-    "rollup": "^2.75.6",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "rollup": "^2.75.7",
     "rollup-plugin-dts": "^4.2.2",
-    "typescript": "^4.7.2"
+    "typescript": "^4.7.4"
   }
 }

@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { Icon } from '@mdi/react'
 import { mdiSunglasses } from '@mdi/js'
 
-import { stitches } from '../stitches'
+import { stitches } from 'src/shared/ui/stitches'
 
 interface Props {
   className?: string,

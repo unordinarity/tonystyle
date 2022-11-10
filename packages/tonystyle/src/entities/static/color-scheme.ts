@@ -1,53 +1,70 @@
 import { combine, createEvent, createStore, Store } from 'effector'
+
 import { browserApi } from 'src/shared/lib/browser-api'
+import { color } from 'src/shared/ui/tokens/color'
 
-// color scheme by time
+export namespace ColorScheme {
+  // color scheme by time
 
-type ColorSchemeByTime = 'light' | 'dark'
-const colorSchemeByTime: Store<ColorSchemeByTime> = combine(browserApi.date, date => (
-  date.getHours() < 6 || date.getHours() > 19 ? 'dark' : 'light'
-))
+  type ColorSchemeByTime = 'light' | 'dark'
+  const colorSchemeByTime: Store<ColorSchemeByTime> = combine(
+    browserApi.date,
+    date => date.getHours() < 6 || date.getHours() > 19 ? 'dark' : 'light'
+  )
 
-// color scheme by system (using media query)
+  // system color scheme (using media query)
 
-type ColorSchemeSystem = 'light' | 'dark' | null
-const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme
+  type ColorSchemeSystem = 'light' | 'dark' | null
+  const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme
 
-// available to render color schemes
+  // available to render color schemes
 
-type ColorSchemeCustom = 'light' | 'light-dimmed' | 'dark' | 'dark-dimmed'
-const colorSchemeFallback: ColorSchemeCustom = 'light'
+  type ColorSchemeCustom = 'light' | 'light-dimmed' | 'dark' | 'dark-dimmed'
+  const colorSchemeFallback: ColorSchemeCustom = 'light'
 
-// options for user to pick
+  // options for user to pick
 
-type ColorSchemeOption = ColorSchemeCustom | 'auto-by-time' | 'auto-by-system'
-const colorSchemeOption: Store<ColorSchemeOption> = createStore<ColorSchemeOption>('auto-by-system')
-const colorSchemeOptionSet = createEvent<ColorSchemeOption>()
-colorSchemeOption.on(colorSchemeOptionSet, (_, payload) => payload)
-const colorSchemeOptionList: Array<ColorSchemeOption> =
-  ['light', 'light-dimmed', 'dark', 'dark-dimmed', 'auto-by-time', 'auto-by-system']
+  type ColorSchemeOption = ColorSchemeCustom | 'auto-by-time' | 'auto-by-system'
+  const colorSchemeOption = createStore<ColorSchemeOption>('auto-by-system')
+  const colorSchemeOptionSet = createEvent<ColorSchemeOption>()
+  colorSchemeOption.on(colorSchemeOptionSet, (_, payload) => payload)
+  const colorSchemeOptionList: Array<ColorSchemeOption> =
+    ['auto-by-time', 'auto-by-system', 'light', 'light-dimmed', 'dark', 'dark-dimmed']
 
-// calculated result color scheme
+  // calculated result color scheme
 
-type ColorSchemeCalculated = ColorSchemeCustom
-const colorSchemeCalculated: Store<ColorSchemeCalculated> = combine(
-  colorSchemeSystem, colorSchemeByTime, colorSchemeOption,
-  (system, byTime, option) => {
-    if (option === 'auto-by-system') {
-      return system || byTime
-    } else if (option === 'auto-by-time') {
-      return byTime || system || colorSchemeFallback
-    } else {
-      return option
+  type ColorSchemeCalculated = ColorSchemeCustom
+  const colorSchemeCalculated: Store<ColorSchemeCalculated> = combine(
+    colorSchemeOption, colorSchemeSystem, colorSchemeByTime,
+    (option, system, byTime) => {
+      if (option === 'auto-by-system') {
+        return system || byTime
+      } else if (option === 'auto-by-time') {
+        return byTime || system || colorSchemeFallback
+      } else {
+        return option
+      }
+    },
+  )
+
+  // listener
+
+  colorSchemeCalculated.watch(theme => {
+    for (let themesKey in color.themesStitches) {
+      document.body.classList.remove(themesKey)
     }
-  },
-)
+    document.body.classList.add({
+      'light': color.themesStitches.lightBright,
+      'light-dimmed': color.themesStitches.lightDim,
+      'dark': color.themesStitches.darkBright,
+      'dark-dimmed': color.themesStitches.darkDim,
+    }[theme])
+  })
 
-// exports
+  // exports
 
-export type ColorScheme = ColorSchemeOption
-export const colorScheme = {
-  list: colorSchemeOptionList,
-  store: colorSchemeCalculated,
-  set: colorSchemeOptionSet,
+  export type Model = ColorSchemeOption
+  export const list = colorSchemeOptionList
+  export const store = colorSchemeCalculated
+  export const set = colorSchemeOptionSet
 }
