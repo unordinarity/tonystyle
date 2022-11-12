@@ -3,12 +3,11 @@ import { random, sample } from 'lodash-es'
 import clsx from 'clsx'
 
 import { stitches } from 'src/shared/ui/stitches'
-import paperTexture from 'src/shared/assets/textures/paper-one.png'
 
 const Container = stitches.styled('div', {
   position: 'relative',
 
-  background: `url(${paperTexture}), $secondarySurface`,
+  backgroundImage: '$paper',
   backgroundBlendMode: 'multiply',
   backgroundColor: '$secondarySurface',
   color: '$secondaryContent',
@@ -36,11 +35,11 @@ const ShadowAnimated: FunctionComponent<ComponentProps<typeof Shadow>> = ({
   const stylePatch = useMemo(() => stitches.css({
     translate: `${random(-8, 8, false)}px ${random(-8, 8, false)}px`,
     rotate: `${random(-3, 3, true)}deg`,
-    background: sample([
-      `url(${paperTexture}), $secondaryBack`,
-      `url(${paperTexture}), $secondarySurface`,
-      `url(${paperTexture}), $secondaryOverlay`,
-    ])
+    backgroundColor: sample([
+      '$secondaryBack',
+      '$secondarySurface',
+      '$secondaryOverlay',
+    ]),
   }), [])
 
   return (

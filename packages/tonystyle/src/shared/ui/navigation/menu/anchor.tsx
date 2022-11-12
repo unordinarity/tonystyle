@@ -3,7 +3,6 @@ import { VariantProps } from '@stitches/react'
 
 import { stitches } from 'src/shared/ui'
 import { Anchor as UiAnchor } from 'src/shared/ui/navigation/anchor'
-import paperTexture from 'src/shared/assets/textures/paper-one.png'
 
 import { Point } from './point'
 
@@ -15,18 +14,25 @@ type Props = ComponentProps<typeof UiAnchor> & VariantProps<typeof Point.Contain
   as?: React.ElementType
 }
 
-const activeCss = stitches.css({
-  boxShadow: '0 0 8px 0 $colors$primaryBack',
+const PointContainerStyled = stitches.styled(Point.Container, {
   backgroundBlendMode: 'multiply',
-  backfaceVisibility: 'hidden',
-  scale: '1.07',
-  rotate: 'z 2deg',
+
   '&:hover': {
-    background: `url(${paperTexture}), $tertiarySurface`,
+    backgroundImage: '$paper',
+    backgroundColor: '$tertiarySurface',
+    color: '$tertiaryContent',
   },
-  '&:not(:hover)': {
-    background: `url(${paperTexture}), $secondarySurface`,
-  }
+})
+
+const activeCss = stitches.css({
+  scale: '1.07',
+  rotate: '2deg',
+
+  backfaceVisibility: 'hidden',
+
+  boxShadow: '0 0 8px 0 $colors$primaryBack',
+  backgroundImage: '$paper',
+  backgroundColor: '$secondarySurface',
 })()
 
 export const Anchor: FunctionComponent<Props> = ({
@@ -35,7 +41,10 @@ export const Anchor: FunctionComponent<Props> = ({
   tip,
   ...props
 }) => (
-  <Point.Container as={UiAnchor} activeClassName={activeCss.className} {...props}>
+  <PointContainerStyled
+    as={UiAnchor}
+    activeClassName={activeCss.className}
+    {...props}>
     {icon && (
       <Point.Icon path={icon} />
     )}
@@ -45,5 +54,5 @@ export const Anchor: FunctionComponent<Props> = ({
         <Point.Tip>{tip}</Point.Tip>
       )}
     </Point.Text>
-  </Point.Container>
+  </PointContainerStyled>
 )

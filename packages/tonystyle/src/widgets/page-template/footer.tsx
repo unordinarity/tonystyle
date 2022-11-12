@@ -12,7 +12,6 @@ export const Footer: FunctionComponent<ComponentProps<typeof Menu.Section>> = (p
         target='_blank'
         icon={link.icon}
         text={link.title}
-        direction='reversed'
       />
     ))}
     <Menu.Button size='large' text='Contacts' />

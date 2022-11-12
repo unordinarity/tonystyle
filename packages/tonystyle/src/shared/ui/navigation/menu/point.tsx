@@ -2,7 +2,6 @@ import React from 'react'
 import { Icon as MdiIcon } from '@mdi/react'
 
 import { stitches } from 'src/shared/ui/stitches'
-import paperTexture from 'src/shared/assets/textures/paper-one.png'
 
 const Container = stitches.styled('div', {
   width: '100%',
@@ -21,14 +20,6 @@ const Container = stitches.styled('div', {
   color: 'inherit',
 
   variants: {
-    direction: {
-      normal: {
-        flexDirection: 'row',
-      },
-      reversed: {
-        flexDirection: 'row-reverse',
-      }
-    },
     size: {
       small: {
         $$sizeContainer: '40px',
@@ -48,7 +39,6 @@ const Container = stitches.styled('div', {
     },
   },
   defaultVariants: {
-    direction: 'normal',
     size: 'medium',
   },
 
@@ -57,11 +47,6 @@ const Container = stitches.styled('div', {
   transitionProperty: 'background-color, color, scale, rotate, box-shadow',
   transitionDuration: '0.2s',
   transitionTimingFunction: 'ease-in-out',
-
-  '&:hover': {
-    background: `url(${paperTexture}), $tertiarySurface`,
-    color: '$tertiaryContent',
-  },
 })
 
 const Text = stitches.styled('div', {

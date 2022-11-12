@@ -1,7 +1,8 @@
-import { createStitches } from '@stitches/react'
+import { createStitches, defaultThemeMap } from '@stitches/react'
 
-import { font } from './tokens/font'
+import { background } from './tokens/background'
 import { color } from './tokens/color'
+import { font } from './tokens/font'
 
 export const stitches = createStitches({
   theme: {
@@ -10,7 +11,14 @@ export const stitches = createStitches({
     colors: {
       ...color.themes.stub,
     },
-  }
+    image: {
+      ...background.images,
+    },
+  },
+  themeMap: {
+    ...defaultThemeMap,
+    ...background.themeMap,
+  },
 })
 
 const globalCss = stitches.globalCss({

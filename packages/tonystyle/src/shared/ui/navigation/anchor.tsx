@@ -1,11 +1,9 @@
 import React, { ComponentPropsWithoutRef, FunctionComponent } from 'react'
 import { Link } from 'gatsby'
 
-import { stitches } from 'src/shared/ui/stitches'
-
 interface Props extends ComponentPropsWithoutRef<typeof Link> {}
 
-const AnchorUnstyled: FunctionComponent<Props> = ({
+export const Anchor: FunctionComponent<Props> = ({
   to,
   activeClassName,
   activeStyle,
@@ -14,7 +12,7 @@ const AnchorUnstyled: FunctionComponent<Props> = ({
   state,
   ...props
 }) => {
-  const isRelative = new URL(document.baseURI).origin === new URL(to, document.baseURI).origin;
+  const isRelative = new URL(document.baseURI).origin === new URL(to, document.baseURI).origin
 
   return (isRelative ? (
     <Link
@@ -32,7 +30,3 @@ const AnchorUnstyled: FunctionComponent<Props> = ({
     />
   ))
 }
-
-export const Anchor = stitches.styled(AnchorUnstyled, {
-
-})
