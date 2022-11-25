@@ -1,13 +1,8 @@
-import React, { FunctionComponent } from 'react'
-import clsx from 'clsx'
+import React, { ComponentProps, FunctionComponent } from 'react'
 import { Icon } from '@mdi/react'
 import { mdiSunglasses } from '@mdi/js'
 
-import { stitches } from 'src/shared/ui/stitches'
-
-interface Props {
-  className?: string,
-}
+import { stitches } from '../stitches'
 
 const spinnerAnimation = stitches.keyframes({
   from: {
@@ -18,22 +13,24 @@ const spinnerAnimation = stitches.keyframes({
   },
 })
 
-const spinnerClassName = stitches.css({
+export const SpinnerIcon = stitches.styled(Icon, {
   color: 'white',
   animationDirection: 'normal',
   animationDuration: '1s',
   animationFillMode: 'forwards',
   animationIterationCount: 'infinite',
-  animationName: spinnerAnimation.name,
+  animationName: `${spinnerAnimation}`,
   animationTimingFunction: 'cubic-bezier(0.76, 0, 0.24, 1)',
 })
 
-export const Spinner: FunctionComponent<Props> = ({
-  className,
+export const Spinner: FunctionComponent<ComponentProps<typeof Icon>> = ({
+  path = mdiSunglasses,
+  size = 64,
+  ...props
 }) => (
-  <Icon
-    path={mdiSunglasses}
-    className={clsx(spinnerClassName, className)}
-    size={64}
+  <SpinnerIcon
+    path={path}
+    size={size}
+    {...props}
   />
 )

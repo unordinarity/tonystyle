@@ -10,14 +10,37 @@ import {
 
 import { Menu } from 'src/shared/ui'
 
-export const Header: FunctionComponent<ComponentProps<typeof Menu.Section>> = (props) => (
-  <Menu.Section {...props}>
-    <Menu.Anchor size='large' to='/' text='Tony.Style' />
-    <Menu.Anchor to='/blog' icon={mdiBookOpenPageVariantOutline} text='Blog' />
-    <Menu.Anchor to='/projects' icon={mdiFloppy} text='Projects' />
-    <Menu.Anchor to='/services' icon={mdiHammerWrench} text='Services' />
-    <Menu.Anchor to='/experience' icon={mdiRocketLaunchOutline} text='Experience' />
-    <Menu.Anchor to='/uses' icon={mdiDevices} text='Uses' tip='Work setup, IDE...' />
-    <Menu.Anchor to='/about-me' icon={mdiCoffeeOutline} text='About me' />
-  </Menu.Section>
+export const Header: FunctionComponent<ComponentProps<typeof Menu.Container>> = (props) => (
+  <Menu.Container {...props}>
+    <Menu.PointAnchor size='large' to='/'>
+      <Menu.Text>Tony.Style</Menu.Text>
+    </Menu.PointAnchor>
+    <Menu.PointAnchor to='/blog'>
+      <Menu.Icon path={mdiBookOpenPageVariantOutline} />
+      <Menu.Text>Blog</Menu.Text>
+    </Menu.PointAnchor>
+    <Menu.PointAnchor to='/projects'>
+      <Menu.Icon path={mdiFloppy} />
+      <Menu.Text>Projects</Menu.Text>
+    </Menu.PointAnchor>
+    <Menu.PointAnchor to='/services'>
+      <Menu.Icon path={mdiHammerWrench} />
+      <Menu.Text>Services</Menu.Text>
+    </Menu.PointAnchor>
+    <Menu.PointAnchor to='/experience'>
+      <Menu.Icon path={mdiRocketLaunchOutline} />
+      <Menu.Text>Experience</Menu.Text>
+    </Menu.PointAnchor>
+    <Menu.PointAnchor to='/uses'>
+      <Menu.Icon path={mdiDevices} />
+      <Menu.Text>
+        Uses
+        <Menu.Tip>Work setup, IDE...</Menu.Tip>
+      </Menu.Text>
+    </Menu.PointAnchor>
+    <Menu.PointAnchor to='/about-me'>
+      <Menu.Icon path={mdiCoffeeOutline} />
+      <Menu.Text>About me</Menu.Text>
+    </Menu.PointAnchor>
+  </Menu.Container>
 )

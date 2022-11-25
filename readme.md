@@ -13,7 +13,7 @@ Business card, CV, personal blog, petproject playground
 
 # Packages
 
-- [background-svg-pattern](./packages/background-svg-pattern)
+- [background-svg-pattern](./packages/background-pattern)
 - [effector-media-query](./packages/effector-media-query) (effector wrapper for media queries matching)
 - [tonystyle](./packages/tonystyle-old) (main package, application entry point)
 

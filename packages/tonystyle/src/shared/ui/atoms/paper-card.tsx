@@ -1,29 +1,17 @@
-import { stitches } from 'src/shared/ui'
+import { stitches } from '../stitches'
 
-import paperTexture from './assets/paper-one.png'
-
-export const PaperCard = stitches.styled('div', {
-  background: `url(${paperTexture}), $secondarySurface`,
+const properties = {
+  backgroundImage: `$paper`,
   backgroundBlendMode: 'multiply',
   backgroundColor: '$secondarySurface',
   color: '$secondaryContent',
   boxShadow: '0 0 8px -4px $colors$primaryBack',
+  border: '0.5px solid $secondaryBack',
+}
 
-  variants: {
-    active: {
-      true: {
-        backgroundColor: `url(${paperTexture})`,
-      },
-      'on-hover': {
-        '&:hover': {},
-        '&:not(:hover)': {},
-      },
-      false: {
-        background: `url(${paperTexture}), $secondarySurface`,
-      },
-    },
-  },
-  defaultVariants: {
-    active: false,
-  },
-})
+const classname = stitches.css(properties)()
+
+export const paperCard = {
+  properties,
+  classname,
+}

@@ -1,9 +1,11 @@
 import React, { ComponentPropsWithoutRef, FunctionComponent } from 'react'
 import { Link } from 'gatsby'
+import { useLocation } from '@reach/router'
 
-interface Props extends ComponentPropsWithoutRef<typeof Link> {}
+interface Props extends ComponentPropsWithoutRef<typeof Link> {
+}
 
-export const Anchor: FunctionComponent<Props> = ({
+export const UniversalLink: FunctionComponent<Props> = ({
   to,
   activeClassName,
   activeStyle,
@@ -12,7 +14,8 @@ export const Anchor: FunctionComponent<Props> = ({
   state,
   ...props
 }) => {
-  const isRelative = new URL(document.baseURI).origin === new URL(to, document.baseURI).origin
+  const location = useLocation()
+  const isRelative = location.origin === new URL(to, location.href).origin
 
   return (isRelative ? (
     <Link
