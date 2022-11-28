@@ -4,6 +4,8 @@ import { faker } from '@faker-js/faker'
 import { PageTemplate } from 'src/widgets/page-template'
 import { HelmetCommon } from 'src/widgets/helmet-common'
 
+import { DrawnFrame } from 'src/shared/ui'
+
 import { Layout } from './ui/layout'
 
 export const Home: FunctionComponent = () => (
@@ -12,7 +14,7 @@ export const Home: FunctionComponent = () => (
     <Layout.Container>
       <Layout.Section>
         <h1>Hero</h1>
-        <p>{faker.lorem.paragraphs()}</p>
+        <DrawnFrame>{faker.lorem.paragraphs()}</DrawnFrame>
       </Layout.Section>
       <Layout.Section>
         <h1>About me</h1>

@@ -1,4 +1,5 @@
 import { createBreakpointMqStore, createEnumMqStore } from '@tonystyle/effector-media-query'
+import { debug } from 'patronum'
 
 export const mediaQuery = {
   colorScheme: createEnumMqStore(
@@ -28,19 +29,19 @@ export const mediaQuery = {
   width: createBreakpointMqStore(
     'width',
     {
-      wearable: '0px',
-      mobile: '576px',
-      tablet: '768px',
-      laptop: '992px',
-      desktop: '1200px'
-    }
+      mobile: '0px',
+      tablet: '640px',
+      desktop: '1024px',
+    },
   ),
   aspectRatio: createBreakpointMqStore(
     'aspect-ratio',
     {
       vertical: '1/999',
       square: '12/14',
-      horizontal: '14/12'
-    }
-  )
+      horizontal: '14/12',
+    },
+  ),
 }
+
+debug(mediaQuery)

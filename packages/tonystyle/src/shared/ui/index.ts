@@ -1,8 +1,8 @@
 export { stitches } from './stitches'
 
-export { Button } from './general/button'
-export { Spinner } from './general/spinner'
-export { Typography } from './general/typography'
+export { DrawnFrame } from './atoms/drawn-frame'
+export { TearCard } from './atoms/tear-card'
 
-export { Anchor } from './navigation/anchor'
-export { Menu } from './navigation/menu'
+export { Spinner } from './molecules/spinner'
+export { Typography } from './molecules/typography'
+export { Menu } from './molecules/menu'

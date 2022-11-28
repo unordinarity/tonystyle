@@ -1,9 +1,5 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { combine, createEvent, createStore, Store } from 'effector'
-import { Icon } from '@mdi/react'
-import { mdiTranslate } from '@mdi/js'
-
-import { Button } from 'src/shared/ui'
 import { browserApi } from 'src/shared/lib/browser-api'
 
 // system locale
@@ -44,20 +40,8 @@ const localeCalculated: Store<LocaleCustom> = combine(
   }
 )
 
-// switch component
-
-export const LocaleSwitch: FunctionComponent = () => (
-  <Button
-    onClick={() => {
-
-    }}>
-    <Icon path={mdiTranslate} size="32px" />
-  </Button>
-)
-
 export const locale = {
   list: localeSystemList,
   store: localeCalculated,
   set: localeOptionSet,
-  Switch: LocaleSwitch,
 }

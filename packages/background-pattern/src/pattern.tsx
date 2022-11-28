@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useMemo } from 'react'
-import { sampleSize, random } from 'lodash-es'
+import { random, sampleSize } from 'lodash-es'
 
 import { PatternBase } from './pattern-base'
 import { iconPathList } from './icon-path-list'

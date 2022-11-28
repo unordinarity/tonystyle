@@ -3,18 +3,19 @@ import React, { ComponentProps, FunctionComponent } from 'react'
 import { Menu } from 'src/shared/ui'
 import { SocialLink } from 'src/entities/static/social-link'
 
-export const Footer: FunctionComponent<ComponentProps<typeof Menu.Section>> = (props) => (
-  <Menu.Section {...props}>
+export const Footer: FunctionComponent<ComponentProps<typeof Menu.Container>> = (props) => (
+  <Menu.Container {...props}>
     {SocialLink.list.map(link => (
-      <Menu.Anchor
+      <Menu.PointAnchor
         key={link.title}
         to={link.url}
-        target='_blank'
-        icon={link.icon}
-        text={link.title}
-        direction='reversed'
-      />
+        target='_blank'>
+        <Menu.Text>{link.title}</Menu.Text>
+        <Menu.Icon path={link.icon} />
+      </Menu.PointAnchor>
     ))}
-    <Menu.Button size='large' text='Contacts' />
-  </Menu.Section>
+    <Menu.Point size='large'>
+      <Menu.Text>Contacts</Menu.Text>
+    </Menu.Point>
+  </Menu.Container>
 )

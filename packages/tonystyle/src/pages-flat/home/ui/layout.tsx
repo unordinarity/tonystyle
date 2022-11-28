@@ -8,7 +8,7 @@ const Container = stitches.styled('div', {
   display: 'flex',
   flexDirection: 'column',
 
-  overflow: 'scroll',
+  overflow: 'visible scroll',
   scrollSnapType: 'y mandatory',
 
   scrollbarWidth: 'none',
