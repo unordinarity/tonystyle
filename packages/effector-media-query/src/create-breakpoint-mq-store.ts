@@ -1,5 +1,6 @@
 import { combine } from 'effector'
 import { mapValues } from 'lodash-es'
+
 import { createSimpleMqStore } from './create-simple-mq-store'
 
 export const createBreakpointMqStore = <Breakpoint extends string = string>(
@@ -8,17 +9,14 @@ export const createBreakpointMqStore = <Breakpoint extends string = string>(
 ) => {
   const storeMap = mapValues(breakpointMap, value => (
     createSimpleMqStore(`(${value} <= ${mediaParameter})`)
-  )) as Record<Breakpoint, ReturnType<typeof createSimpleMqStore>>
+  ))
 
-  return combine(storeMap, storeValuesMap => (
-    Object.entries(storeValuesMap as Record<Breakpoint, boolean>)
+  return combine(storeMap, storeValuesMap => {
+    return Object.entries(storeValuesMap)
       .reverse()
-      .reduce<string | null>(
-        // @ts-ignore
-        (result, [brName, brValue]: [Breakpoint, boolean]) => (
-          result || brValue ? brName : result
-        ),
+      .reduce<Breakpoint | null>(
+        (result, [brName, brValue]) => result || (brValue as boolean ? brName as Breakpoint : result),
         null,
       )
-  ))
+  })
 }

@@ -25,7 +25,7 @@ const Heading: FunctionComponent<HeadingProps> = ({
   ...props
 }) => {
   if (as === 'h1') {
-    return <Heading1 {...props} />
+    return <Heading1 as='h1' {...props} />
   }
   return null
 }

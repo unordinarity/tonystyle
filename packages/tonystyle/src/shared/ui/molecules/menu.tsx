@@ -1,68 +1,19 @@
-import React, { FunctionComponent, useMemo } from 'react'
+import React, { FunctionComponent } from 'react'
 import { ComponentProps } from '@stitches/react'
 import clsx from 'clsx'
 import { Icon as IconMdi } from '@mdi/react'
 import { random, sample } from 'lodash-es'
 
 import { UniversalLink } from 'src/shared/lib/universal-link'
-import { paperCard } from 'src/shared/ui/atoms/paper-card'
+
+import { paperCard } from '../atoms/paper-card'
+import { PaperStack } from '../atoms/paper-stack'
 
 import { stitches } from '../stitches'
 
 // container
 
-const ContainerShadow = stitches.styled('div', {
-  ...paperCard.properties,
-  position: 'absolute',
-  inset: '0',
-  zIndex: -1,
-
-  translate: '0 0',
-  rotate: '0',
-})
-
-const ContainerShadowRandom: FunctionComponent<ComponentProps<typeof ContainerShadow>> = ({
-  style,
-  ...props
-}) => {
-  const staticStyle = useMemo(() => ({
-    filter: `brightness(${random(0.75, 1.33, true)})`,
-  }), [])
-
-  const dynamicStyle = useMemo(() => ({
-    translate: `${sample([-1 * random(2, 12), random(2, 12)])}px ${sample([-1 * random(2, 12), random(2, 12)])}px`,
-    rotate: `${random(-2, 2, true)}deg`,
-  }), [])
-
-  return (
-    <ContainerShadow
-      style={{
-        ...staticStyle,
-        ...dynamicStyle,
-        ...style,
-      }}
-      {...props}
-    />
-  )
-}
-
-const ContainerBack = stitches.styled('div', {
-  ...paperCard.properties,
-  position: 'relative',
-})
-
-const Container: FunctionComponent<ComponentProps<typeof ContainerBack>> = ({
-  children,
-  ...props
-}) => (
-  <ContainerBack {...props}>
-    <ContainerShadowRandom />
-    <ContainerShadowRandom />
-    <ContainerShadowRandom />
-    <ContainerShadowRandom />
-    {children}
-  </ContainerBack>
-)
+const Container = stitches.styled(PaperStack, {})
 
 // point
 
