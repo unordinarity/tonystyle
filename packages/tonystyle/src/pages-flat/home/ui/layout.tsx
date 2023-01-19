@@ -50,7 +50,7 @@ const SectionContent = stitches.styled('section', {
 
   '& > *': {
     pointerEvents: 'all',
-  }
+  },
 })
 
 const Section: FunctionComponent<{ children?: ReactNode }> = ({
@@ -67,5 +67,5 @@ const Section: FunctionComponent<{ children?: ReactNode }> = ({
 
 export const Layout = {
   Container,
-  Section
+  Section,
 }

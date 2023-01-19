@@ -9,7 +9,7 @@ export namespace ColorScheme {
   type ColorSchemeByTime = 'light' | 'dark'
   const colorSchemeByTime: Store<ColorSchemeByTime> = combine(
     browserApi.date,
-    date => date.getHours() < 6 || date.getHours() > 19 ? 'dark' : 'light'
+    date => date.store.getHours() < 6 || date.store.getHours() > 19 ? 'dark' : 'light',
   )
 
   // system color scheme (using media query)

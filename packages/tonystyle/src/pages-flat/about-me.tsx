@@ -1,12 +1,10 @@
 import React, { FunctionComponent } from 'react'
 
-import { HelmetCommon } from 'src/widgets/helmet-common'
+import { HeadTemplate } from 'src/widgets/head-template'
 import { PageTemplate } from 'src/widgets/page-template'
 
 export const AboutMe: FunctionComponent = () => (
   <PageTemplate>
-      <HelmetCommon title='About me' />
-
       <h1>About me</h1>
 
       <h2>Прошлое</h2>
@@ -30,4 +28,8 @@ export const AboutMe: FunctionComponent = () => (
       <p>Дизайн</p>
       <p>Опенсорс разработка</p>
   </PageTemplate>
+)
+
+export const AboutMeHead: FunctionComponent = () => (
+  <HeadTemplate title='About me' />
 )

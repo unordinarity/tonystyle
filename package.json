@@ -1,12 +1,22 @@
 {
   "name": "tonystyle",
   "private": true,
+  "scripts": {
+    "develop": "nx develop @tonystyle/tonystyle",
+    "format": "nx run-many --target=format",
+    "lint": "nx run-many --target=lint",
+    "test": "nx run-many --target=test",
+    "build": "nx build @tonystyle/tonystyle",
+    "serve": "nx serve @tonystyle/tonystyle",
+    "clean": "nx run-many --target=clean"
+  },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
-    "nx": "15.2.1"
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "lerna": "^6.4.1",
+    "nx": "^15.5.2"
   }
 }

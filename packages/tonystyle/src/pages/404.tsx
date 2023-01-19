@@ -1,3 +1,1 @@
-import React from 'react'
-
-export { NotFound as default } from 'src/pages-flat/not-found'
+export { NotFound as default, NotFoundHead as Head } from 'src/pages-flat/not-found'

@@ -6,11 +6,12 @@ import { stitches } from '../stitches'
 
 const Container = stitches.styled('div', {
   position: 'relative',
+  padding: '16px',
 })
 
 const Shadow = stitches.styled('div', {
   position: 'absolute',
-  inset: 0,
+  inset: '8px',
   border: '1px solid $colors$primaryContent',
   zIndex: -1,
 })

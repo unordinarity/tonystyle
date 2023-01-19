@@ -1,8 +1,5 @@
 import { createTheme } from '@stitches/react'
-import {
-  gray, grayDark, red, redDark, yellow, yellowDark,
-  skyDark, mintDark, limeDark,
-} from '@radix-ui/colors'
+import { gray, grayDark, limeDark, mintDark, red, redDark, skyDark, yellow, yellowDark } from '@radix-ui/colors'
 import tinycolor from 'tinycolor2'
 import { mapValues } from 'lodash-es'
 
@@ -195,19 +192,19 @@ const themes = {
 
 const themesStitches = {
   stub: createTheme({
-    colors: { ...themes.stub }
+    colors: { ...themes.stub },
   }),
   darkBright: createTheme({
-    colors: { ...themes.darkBright }
+    colors: { ...themes.darkBright },
   }),
   darkDim: createTheme({
-    colors: { ...themes.darkDim }
+    colors: { ...themes.darkDim },
   }),
   lightBright: createTheme({
-    colors: { ...themes.lightBright }
+    colors: { ...themes.lightBright },
   }),
   lightDim: createTheme({
-    colors: { ...themes.lightDim }
+    colors: { ...themes.lightDim },
   }),
 }
 

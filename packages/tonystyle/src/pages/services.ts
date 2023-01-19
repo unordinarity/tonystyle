@@ -1,1 +1,1 @@
-export { Services as default } from 'src/pages-flat/services'
+export { Services as default, ServicesHead as Head } from 'src/pages-flat/services'

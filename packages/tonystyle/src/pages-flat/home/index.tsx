@@ -2,15 +2,14 @@ import React, { FunctionComponent } from 'react'
 import { faker } from '@faker-js/faker'
 
 import { PageTemplate } from 'src/widgets/page-template'
-import { HelmetCommon } from 'src/widgets/helmet-common'
+import { HeadTemplate } from 'src/widgets/head-template'
 
 import { DrawnFrame } from 'src/shared/ui'
 
 import { Layout } from './ui/layout'
 
 export const Home: FunctionComponent = () => (
-  <PageTemplate layoutVertical='full'>
-    <HelmetCommon />
+  <PageTemplate>
     <Layout.Container>
       <Layout.Section>
         <h1>Hero</h1>
@@ -46,4 +45,8 @@ export const Home: FunctionComponent = () => (
       </Layout.Section>
     </Layout.Container>
   </PageTemplate>
+)
+
+export const HomeHead: FunctionComponent = () => (
+  <HeadTemplate />
 )

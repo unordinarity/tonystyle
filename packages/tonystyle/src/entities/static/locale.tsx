@@ -5,7 +5,7 @@ import { browserApi } from 'src/shared/lib/browser-api'
 // system locale
 
 type LocaleSystem = string
-const localeSystemList: Store<Array<LocaleSystem>> = browserApi.navigator.languages
+const localeSystemList: Store<Array<LocaleSystem>> = browserApi.navigator.languages.store
 
 // available to use locales
 
@@ -24,7 +24,7 @@ localeOption.on(localeOptionSet, (_, payload) => payload)
 // calculated result locale
 
 type LocaleCalculated = LocaleCustom
-const localeCalculated: Store<LocaleCustom> = combine(
+const localeCalculated: Store<LocaleCalculated> = combine(
   localeOption, localeSystemList,
   (option, systemList) => {
     // @ts-ignore
@@ -37,7 +37,7 @@ const localeCalculated: Store<LocaleCustom> = combine(
     } else {
       return option
     }
-  }
+  },
 )
 
 export const locale = {

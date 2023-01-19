@@ -1,12 +1,10 @@
 import React, { FunctionComponent } from 'react'
 
-import { HelmetCommon } from 'src/widgets/helmet-common'
+import { HeadTemplate } from 'src/widgets/head-template'
 import { PageTemplate } from 'src/widgets/page-template'
 
 export const Services: FunctionComponent = () => (
   <PageTemplate>
-    <HelmetCommon title="Services" />
-
     <h1>Услуги</h1>
 
     <section>
@@ -25,6 +23,7 @@ export const Services: FunctionComponent = () => (
         <li>Ревью существующей кодовой базы</li>
         <li>План доработки архитектуры</li>
         <li>Переезд на новые инструменты</li>
+        <li>Поиск и решение бутылочных горлышек производительности</li>
       </ul>
 
       <h3>Масштабирование</h3>
@@ -39,12 +38,16 @@ export const Services: FunctionComponent = () => (
 
     <section>
       <h2>Менторство</h2>
-      <p>Для братьев-айтишников</p>
+      <p>Для братьев и сестёр в айти</p>
 
       <ul>
         <li>Ревью петпроектов и тестовых заданий</li>
-        <li>Поиск и решение бутылочных горлышек производительности</li>
+        <li>Составление и доработка резюме</li>
       </ul>
     </section>
   </PageTemplate>
+)
+
+export const ServicesHead: FunctionComponent = () => (
+  <HeadTemplate title='Services' />
 )

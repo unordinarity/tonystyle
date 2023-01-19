@@ -1,1 +1,1 @@
-export { AboutMe as default } from 'src/pages-flat/about-me'
+export { AboutMe as default, AboutMeHead as Head } from 'src/pages-flat/about-me'

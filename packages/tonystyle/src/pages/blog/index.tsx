@@ -1,1 +1,1 @@
-export { BlogHome as default } from 'src/pages-flat/blog-home'
+export { BlogHome as default, BlogHomeHead as Head } from 'src/pages-flat/blog-home'

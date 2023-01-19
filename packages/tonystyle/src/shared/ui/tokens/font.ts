@@ -42,7 +42,7 @@ const stacks = {
     '"Droid Sans Mono"',
     '"Courier New"',
     'monospace',
-  ]
+  ],
 }
 
 export const families = {

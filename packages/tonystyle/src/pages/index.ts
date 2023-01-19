@@ -1,1 +1,1 @@
-export { Home as default } from 'src/pages-flat/home'
+export { Home as default, HomeHead as Head } from 'src/pages-flat/home'

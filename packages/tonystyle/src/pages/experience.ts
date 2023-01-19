@@ -1,1 +1,1 @@
-export { Experience as default } from 'src/pages-flat/experience'
+export { Experience as default, ExperienceHead as Head } from 'src/pages-flat/experience'

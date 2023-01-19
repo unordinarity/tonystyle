@@ -18,8 +18,6 @@ export namespace Link {
       url: '',
       icon: '',
     },
-    relations: {
-
-    }
+    relations: {},
   }]
 }

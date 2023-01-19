@@ -19,7 +19,7 @@ export namespace Tag {
       title: '',
     },
     relations: {
-      articles: []
+      articles: [],
     },
   }]
 }

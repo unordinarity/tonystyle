@@ -24,21 +24,26 @@
     .back {
       fill: url(#gradient);
     }
+
     .path {
       fill: white;
     }
+
     @media (prefers-color-scheme: dark) {
       .back {
         fill: none;
       }
+
       .path {
         fill: url(#gradient);
       }
     }
+
     @media (prefers-color-scheme: light) {
       .back {
         fill: none;
       }
+
       .path {
         fill: url(#gradient);
       }

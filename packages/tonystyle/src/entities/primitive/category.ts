@@ -16,26 +16,26 @@ export namespace Category {
   export const list: Array<Model> = [{
     id: 'megapost',
     attributes: {
-      title: 'Megapost'
+      title: 'Megapost',
     },
     relations: {
-      article: []
-    }
+      article: [],
+    },
   }, {
     id: 'article',
     attributes: {
-      title: 'Article'
+      title: 'Article',
     },
     relations: {
-      article: []
-    }
+      article: [],
+    },
   }, {
     id: 'diary',
     attributes: {
-      title: 'Diary'
+      title: 'Diary',
     },
     relations: {
-      article: []
-    }
+      article: [],
+    },
   }]
 }

@@ -20,14 +20,3 @@ export const stitches = createStitches({
     ...background.themeMap,
   },
 })
-
-const globalCss = stitches.globalCss({
-  'body': {
-    fontFamily: '$paragraph',
-    fontWeight: '$normal',
-    backgroundColor: '$primaryBack',
-    color: '$primaryContent',
-  }
-})
-
-globalCss()

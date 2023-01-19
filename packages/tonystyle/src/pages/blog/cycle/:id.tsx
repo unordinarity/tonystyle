@@ -1,1 +1,1 @@
-export { BlogCycleId as default } from 'src/pages-flat/blog-cycle-id'
+export { BlogCycleId as default, BlogCycleIdHead as Head } from 'src/pages-flat/blog-cycle-id'

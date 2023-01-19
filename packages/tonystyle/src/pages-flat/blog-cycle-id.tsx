@@ -1,12 +1,14 @@
 import React, { FunctionComponent } from 'react'
 
-import { HelmetCommon } from 'src/widgets/helmet-common'
+import { HeadTemplate } from 'src/widgets/head-template'
 import { PageTemplate } from 'src/widgets/page-template'
 
 export const BlogCycleId: FunctionComponent = () => (
   <PageTemplate>
-    <HelmetCommon title='PostId' />
-
     <h1>CycleId</h1>
   </PageTemplate>
+)
+
+export const BlogCycleIdHead: FunctionComponent = () => (
+  <HeadTemplate title='PostId' />
 )

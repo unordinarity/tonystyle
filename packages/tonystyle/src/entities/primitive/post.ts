@@ -26,7 +26,7 @@ export namespace Post {
     },
     relations: {
       tags: [],
-      category: ''
-    }
+      category: '',
+    },
   }]
 }

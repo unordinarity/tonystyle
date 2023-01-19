@@ -6,9 +6,9 @@ const config: GatsbyConfig = {
     title: 'Tony.Style',
     description: 'Business card, CV, personal blog, petproject playground',
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
+  flags: {
+    DEV_SSR: true,
+  },
   graphqlTypegen: {
     typesOutputPath: '/src/gatsby-graphql-typegen.d.ts',
   },
@@ -17,8 +17,8 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-alias-imports',
       options: {
         aliases: {
-          'src': path.resolve(__dirname, 'src')
-        }
+          'src': path.resolve(__dirname, 'src'),
+        },
       }
     },
     {
@@ -41,7 +41,6 @@ const config: GatsbyConfig = {
         extensions: ['.mdx'],
       },
     },
-    'gatsby-plugin-react-helmet-async',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

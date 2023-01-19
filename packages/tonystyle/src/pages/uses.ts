@@ -1,1 +1,1 @@
-export { Uses as default } from 'src/pages-flat/uses'
+export { Uses as default, UsesHead as Head } from 'src/pages-flat/uses'
