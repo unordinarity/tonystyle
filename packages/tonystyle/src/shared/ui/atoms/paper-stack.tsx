@@ -5,6 +5,7 @@ import { random, sample } from 'lodash-es'
 import { stitches } from '../stitches'
 
 import { paperCard } from './paper-card'
+import { useRenderingState } from '@tonystyle/gatsby-ssg-helpers'
 
 const ShadowStatic = stitches.styled('div', {
   ...paperCard.properties,
@@ -20,14 +21,25 @@ const ShadowRandom: FunctionComponent<ComponentProps<typeof ShadowStatic>> = ({
   style,
   ...props
 }) => {
-  const staticStyle = useMemo(() => ({
-    filter: `brightness(${random(0.75, 1.33, true)})`,
-  }), [])
+  const renderingState = useRenderingState()
 
-  const dynamicStyle = useMemo(() => ({
-    translate: `${sample([-1 * random(2, 12), random(2, 12)])}px ${sample([-1 * random(2, 12), random(2, 12)])}px`,
-    rotate: `${random(-2, 2, true)}deg`,
-  }), [])
+  const staticStyle = useMemo(
+    () => (
+      renderingState === 'subsequent-client-render' ? {
+        filter: `brightness(${random(0.75, 1.33, true)})`,
+      } : {}
+    ),
+    [],
+  )
+
+  const dynamicStyle = useMemo(
+    () => (
+      renderingState === 'subsequent-client-render' ? {
+        translate: `${sample([-1 * random(2, 12), random(2, 12)])}px ${sample([-1 * random(2, 12), random(2, 12)])}px`,
+        rotate: `${random(-2, 2, true)}deg`,
+      } : {}),
+    [],
+  )
 
   return (
     <ShadowStatic

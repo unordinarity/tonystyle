@@ -1,5 +1,6 @@
-import { createBreakpointMqStore, createEnumMqStore } from '@tonystyle/effector-media-query'
 import { debug } from 'patronum'
+
+import { createBreakpointMqStore, createEnumMqStore } from '@tonystyle/effector-media-query'
 
 export const mediaQuery = {
   colorScheme: createEnumMqStore(
@@ -44,4 +45,4 @@ export const mediaQuery = {
   // ),
 }
 
-debug(mediaQuery)
+debug(mediaQuery.colorScheme.store)
