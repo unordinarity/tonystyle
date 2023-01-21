@@ -3,6 +3,7 @@ import { ComponentProps } from '@stitches/react'
 import { random, sample } from 'lodash-es'
 
 import { stitches } from '../stitches'
+import { useRenderingState } from '@tonystyle/gatsby-ssg-helpers'
 
 const Container = stitches.styled('div', {
   position: 'relative',
@@ -20,10 +21,16 @@ const ShadowRandom: FunctionComponent<ComponentProps<typeof Shadow>> = ({
   style,
   ...props
 }) => {
-  const dynamicStyle = useMemo(() => ({
-    translate: `${sample([-1 * random(2, 4), random(2, 4)])}px ${sample([-1 * random(2, 4), random(2, 4)])}px`,
-    rotate: `${random(-1, 1, true)}deg`,
-  }), [])
+  const renderingState = useRenderingState()
+  const dynamicStyle = useMemo(
+    () => (
+      renderingState === 'subsequent-client-render' ? {
+        translate: `${sample([-1 * random(2, 4), random(2, 4)])}px ${sample([-1 * random(2, 4), random(2, 4)])}px`,
+        rotate: `${random(-1, 1, true)}deg`,
+      } : {}
+    ),
+    [renderingState],
+  )
 
   return (
     <Shadow

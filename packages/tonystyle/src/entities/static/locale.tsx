@@ -11,7 +11,7 @@ const localeSystemList: Store<Array<LocaleSystem>> = browserApi.navigator.langua
 
 const localeCustomList = ['en', 'ru'] as const
 type LocaleCustom = (typeof localeCustomList)[number]
-const localeFallback: LocaleCustom = 'en'
+const localePrimary: LocaleCustom = 'en'
 
 // options for user to pick
 
@@ -33,7 +33,7 @@ const localeCalculated: Store<LocaleCalculated> = combine(
         // @ts-ignore
         if (localeOptionList.includes(system)) return system as LocaleCustom
       }
-      return localeFallback
+      return localePrimary
     } else {
       return option
     }
@@ -42,6 +42,7 @@ const localeCalculated: Store<LocaleCalculated> = combine(
 
 export const locale = {
   list: localeSystemList,
+  primary: localePrimary,
   store: localeCalculated,
   set: localeOptionSet,
 }

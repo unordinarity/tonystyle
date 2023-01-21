@@ -15,7 +15,7 @@ export namespace ColorScheme {
   // system color scheme (using media query)
 
   type ColorSchemeSystem = 'light' | 'dark' | null
-  const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme
+  const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme.store
 
   // available to render color schemes
 
@@ -38,9 +38,9 @@ export namespace ColorScheme {
     colorSchemeOption, colorSchemeSystem, colorSchemeByTime,
     (option, system, byTime) => {
       if (option === 'auto-by-system') {
-        return system || byTime
+        return system || colorSchemeFallback
       } else if (option === 'auto-by-time') {
-        return byTime || system || colorSchemeFallback
+        return byTime || colorSchemeFallback
       } else {
         return option
       }
@@ -49,17 +49,19 @@ export namespace ColorScheme {
 
   // listener
 
-  colorSchemeCalculated.watch(theme => {
-    for (let themesKey in color.themesStitches) {
-      document.body.classList.remove(themesKey)
-    }
-    document.body.classList.add({
-      'light': color.themesStitches.lightBright,
-      'light-dimmed': color.themesStitches.lightDim,
-      'dark': color.themesStitches.darkBright,
-      'dark-dimmed': color.themesStitches.darkDim,
-    }[theme])
-  })
+  export const watch = () => {
+    colorSchemeCalculated.watch(theme => {
+      for (let themesKey in color.themesStitches) {
+        document.body.classList.remove(themesKey)
+      }
+      document.body.classList.add({
+        'light': color.themesStitches.lightBright,
+        'light-dimmed': color.themesStitches.lightDim,
+        'dark': color.themesStitches.darkBright,
+        'dark-dimmed': color.themesStitches.darkDim,
+      }[theme])
+    })
+  }
 
   // exports
 

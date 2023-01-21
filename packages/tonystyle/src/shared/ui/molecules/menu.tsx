@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useMemo } from 'react'
 import { ComponentProps } from '@stitches/react'
 import clsx from 'clsx'
 import { Icon as IconMdi } from '@mdi/react'
@@ -10,6 +10,7 @@ import { paperCard } from '../atoms/paper-card'
 import { PaperStack } from '../atoms/paper-stack'
 
 import { stitches } from '../stitches'
+import { useRenderingState } from '@tonystyle/gatsby-ssg-helpers'
 
 // container
 
@@ -110,17 +111,29 @@ const PointAnchor: FunctionComponent<PointAnchorProps> = ({
   activeClassName,
   activeStyle,
   ...props
-}) => (
-  <PointAnchorLike
-    as={UniversalLink}
-    activeClassName={clsx(activeClassName, pointActiveClassname)}
-    activeStyle={{
-      ...activeStyle,
-      rotate: `${sample([-1 * random(1, 4, true), random(1, 4, true)])}deg`,
-    }}
-    {...props}
-  />
-)
+}) => {
+  const renderingState = useRenderingState()
+
+  const randomStyle = useMemo(
+    () => (
+      renderingState === 'subsequent-client-render' ? {
+        rotate: `${sample([-1 * random(1, 4, true), random(1, 4, true)])}deg`,
+      } : {}),
+    [],
+  )
+
+  return (
+    <PointAnchorLike
+      as={UniversalLink}
+      activeClassName={clsx(activeClassName, pointActiveClassname)}
+      activeStyle={{
+        ...activeStyle,
+        ...randomStyle,
+      }}
+      {...props}
+    />
+  )
+}
 
 // text, tip, icon
 
