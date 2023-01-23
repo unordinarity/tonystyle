@@ -29,7 +29,7 @@ const ShadowRandom: FunctionComponent<ComponentProps<typeof ShadowStatic>> = ({
         filter: `brightness(${random(0.75, 1.33, true)})`,
       } : {}
     ),
-    [],
+    [renderingState],
   )
 
   const dynamicStyle = useMemo(
@@ -38,7 +38,7 @@ const ShadowRandom: FunctionComponent<ComponentProps<typeof ShadowStatic>> = ({
         translate: `${sample([-1 * random(2, 12), random(2, 12)])}px ${sample([-1 * random(2, 12), random(2, 12)])}px`,
         rotate: `${random(-2, 2, true)}deg`,
       } : {}),
-    [],
+    [renderingState],
   )
 
   return (
