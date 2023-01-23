@@ -8,3 +8,5 @@ export const themeCss = stitches.globalCss({
     color: '$primaryContent',
   },
 })
+
+themeCss()

@@ -7,11 +7,11 @@ export const createBreakpointMqStore = <Breakpoint extends string = string>(
   mediaParameter: string,
   breakpointMap: Record<Breakpoint, string>
 ) => {
-  const storeMap = mapValues(breakpointMap, value => (
+  const mqStoreMap = mapValues(breakpointMap, value => (
     createSimpleMqStore(`(${value} <= ${mediaParameter})`)
   ))
 
-  return combine(storeMap, storeValuesMap => {
+  const store = combine(mapValues(mqStoreMap, elem => elem.store), storeValuesMap => {
     return Object.entries(storeValuesMap)
       .reverse()
       .reduce<Breakpoint | null>(
@@ -19,4 +19,14 @@ export const createBreakpointMqStore = <Breakpoint extends string = string>(
         null,
       )
   })
+
+  const watch = () =>
+    (Object.values(mqStoreMap) as Array<ReturnType<typeof createSimpleMqStore>>)
+      .map(elem => elem.watch)
+      .forEach(elem => elem())
+
+  return {
+    store,
+    watch,
+  }
 }

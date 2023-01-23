@@ -1,15 +1,20 @@
 import { createEvent, createStore } from 'effector'
 
 export const createSimpleMqStore = (query: string) => {
-  const mediaQueryList = window.matchMedia(query)
+  const store = createStore<boolean | null>(null)
+  const set = createEvent<boolean>()
+  store.on(set, (_, payload) => payload)
 
-  const $matches = createStore<boolean>(mediaQueryList.matches)
-  const match = createEvent<boolean>()
-  $matches.on(match, (_, payload) => payload)
+  const watch = () => {
+    const mediaQueryList = window.matchMedia(query)
 
-  mediaQueryList.addEventListener('change', ev => {
-    match(ev.matches)
-  })
+    mediaQueryList.addEventListener('change', ev => {
+      set(ev.matches)
+    })
+  }
 
-  return $matches
+  return {
+    store,
+    watch,
+  }
 }
