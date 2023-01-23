@@ -22,6 +22,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/lodash-es": "^4.17.6",
+    "patronum": "^1.14.1",
     "rimraf": "^4.1.1",
     "rollup": "^3.10.0",
     "rollup-plugin-dts": "^5.1.1",

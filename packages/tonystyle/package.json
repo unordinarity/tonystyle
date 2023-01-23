@@ -33,7 +33,6 @@
     "gatsby-alias-imports": "^1.0.6",
     "gatsby-plugin-feed": "^5.4.0",
     "gatsby-plugin-image": "^3.4.0",
-    "gatsby-plugin-manifest": "^5.4.0",
     "gatsby-plugin-mdx": "^5.4.0",
     "gatsby-plugin-open-graph-images": "^0.1.8",
     "gatsby-plugin-page-creator": "^5.4.0",

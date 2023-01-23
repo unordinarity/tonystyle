@@ -1,4 +1,5 @@
 import { createEvent, createStore } from 'effector'
+import { executeAfterRender } from '@tonystyle/gatsby-ssg-helpers'
 
 const store = createStore<Array<string>>(
   typeof window === 'undefined' ? [] : [...window.navigator.languages],
@@ -13,7 +14,8 @@ const watch = () => {
   })
 }
 
+executeAfterRender(watch)
+
 export const languages = {
   store,
-  watch,
 }

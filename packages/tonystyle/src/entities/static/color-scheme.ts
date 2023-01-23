@@ -2,6 +2,7 @@ import { combine, createEvent, createStore, Store } from 'effector'
 
 import { browserApi } from 'src/shared/lib/browser-api'
 import { color } from 'src/shared/ui/tokens/color'
+import { executeAfterRender } from '@tonystyle/gatsby-ssg-helpers'
 
 export namespace ColorScheme {
   // color scheme by time
@@ -49,19 +50,23 @@ export namespace ColorScheme {
 
   // listener
 
-  export const watch = () => {
+  const themeToStitchesMap: Record<ColorSchemeCalculated, string> = {
+    'light': color.themesStitches.lightBright,
+    'light-dimmed': color.themesStitches.lightDim,
+    'dark': color.themesStitches.darkBright,
+    'dark-dimmed': color.themesStitches.darkDim,
+  }
+
+  const watch = () => {
     colorSchemeCalculated.watch(theme => {
-      for (let themesKey in color.themesStitches) {
-        document.body.classList.remove(themesKey)
-      }
-      document.body.classList.add({
-        'light': color.themesStitches.lightBright,
-        'light-dimmed': color.themesStitches.lightDim,
-        'dark': color.themesStitches.darkBright,
-        'dark-dimmed': color.themesStitches.darkDim,
-      }[theme])
+      Object.values(color.themesStitches).forEach(themeClassName => {
+        document.body.classList.remove(themeClassName)
+      })
+      document.body.classList.add(themeToStitchesMap[theme])
     })
   }
+
+  executeAfterRender(watch)
 
   // exports
 

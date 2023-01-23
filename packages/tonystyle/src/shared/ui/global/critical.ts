@@ -9,3 +9,5 @@ export const criticalCss = stitches.globalCss({
     },
   },
 })
+
+criticalCss()

@@ -1,4 +1,5 @@
 import { createEvent, createStore } from 'effector'
+import { executeAfterRender } from '@tonystyle/gatsby-ssg-helpers'
 
 const store = createStore<Date>(new Date())
 const set = createEvent<Date>()
@@ -10,7 +11,8 @@ const watch = () => {
   }, 60 * 1000)
 }
 
+executeAfterRender(watch)
+
 export const date = {
   store,
-  watch,
 }

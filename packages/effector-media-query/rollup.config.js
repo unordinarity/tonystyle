@@ -13,7 +13,7 @@ export default defineConfig([{
     file: 'dist/index.js',
     format: 'esm',
   }],
-  external: ['effector', 'lodash-es']
+  external: ['effector', 'lodash-es', 'patronum'],
 }, {
   input: 'src/index.ts',
   plugins: [...plugins, dts()],
@@ -21,5 +21,5 @@ export default defineConfig([{
     file: 'dist/index.d.ts',
     format: 'es',
   },
-  external: ['effector', 'lodash-es']
+  external: ['effector', 'lodash-es', 'patronum'],
 }])
