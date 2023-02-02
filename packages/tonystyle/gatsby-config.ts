@@ -13,13 +13,14 @@ const config: GatsbyConfig = {
     typesOutputPath: '/src/gatsby-graphql-typegen.d.ts',
   },
   plugins: [
+    'gatsby-plugin-mdx-frontmatter',
     {
       resolve: 'gatsby-alias-imports',
       options: {
         aliases: {
           'src': path.resolve(__dirname, 'src'),
         },
-      }
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -39,6 +40,7 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx'],
+        plugins: [],
       },
     },
   ],
