@@ -1,5 +1,5 @@
 {
-  "name": "@tonystyle/gatsby-ssg-helpers",
+  "name": "@tonystyle/effector-ssr-helpers",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -13,19 +13,19 @@
     "clean": "rimraf dist"
   },
   "peerDependencies": {
-    "gatsby": "^5.4.2",
     "react": "^18.2.0"
   },
   "dependencies": {
-    "type-fest": "^3.5.2"
+    "type-fest": "^3.5.4"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/react": "^18.0.27",
     "react": "^18.2.0",
-    "rimraf": "^4.1.1",
-    "rollup": "^3.10.0",
+    "read-pkg-up": "^9.1.0",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.13.0",
     "rollup-plugin-dts": "^5.1.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.5"
   }
 }

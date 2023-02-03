@@ -3,7 +3,7 @@ import { ComponentProps } from '@stitches/react'
 import { random, sample } from 'lodash-es'
 
 import { stitches } from '../stitches'
-import { useRenderingState } from '@tonystyle/gatsby-ssg-helpers'
+import { useRenderingState } from '@tonystyle/react-ssr-helpers'
 
 const Container = stitches.styled('div', {
   position: 'relative',

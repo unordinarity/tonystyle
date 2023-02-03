@@ -2,7 +2,7 @@ import { combine, createEvent, createStore, Store } from 'effector'
 
 import { browserApi } from 'src/shared/lib/browser-api'
 import { color } from 'src/shared/ui/tokens/color'
-import { executeAfterRender } from '@tonystyle/gatsby-ssg-helpers'
+import { executeAfterRender } from '@tonystyle/react-ssr-helpers'
 
 export namespace ColorScheme {
   // color scheme by time

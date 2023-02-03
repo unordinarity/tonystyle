@@ -5,7 +5,7 @@ import { random, sample } from 'lodash-es'
 import { stitches } from '../stitches'
 
 import { paperCard } from './paper-card'
-import { useRenderingState } from '@tonystyle/gatsby-ssg-helpers'
+import { useRenderingState } from '@tonystyle/react-ssr-helpers'
 
 const ShadowStatic = stitches.styled('div', {
   ...paperCard.properties,

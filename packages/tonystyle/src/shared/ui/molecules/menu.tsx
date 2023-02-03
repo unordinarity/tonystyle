@@ -4,13 +4,14 @@ import clsx from 'clsx'
 import { Icon as IconMdi } from '@mdi/react'
 import { random, sample } from 'lodash-es'
 
+import { useRenderingState } from '@tonystyle/react-ssr-helpers'
+
 import { UniversalLink } from 'src/shared/lib/universal-link'
 
 import { paperCard } from '../atoms/paper-card'
 import { PaperStack } from '../atoms/paper-stack'
 
 import { stitches } from '../stitches'
-import { useRenderingState } from '@tonystyle/gatsby-ssg-helpers'
 
 // container
 

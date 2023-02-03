@@ -1,5 +1,5 @@
 import { createEvent, createStore } from 'effector'
-import { executeAfterRender } from '@tonystyle/gatsby-ssg-helpers'
+import { executeAfterRender } from '@tonystyle/react-ssr-helpers'
 
 const store = createStore<Date>(new Date())
 const set = createEvent<Date>()

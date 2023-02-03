@@ -5,16 +5,11 @@ export const createSimpleMqStore = (query: string) => {
   const set = createEvent<boolean>()
   store.on(set, (_, payload) => payload)
 
-  const watch = () => {
-    const mediaQueryList = window.matchMedia(query)
+  const mediaQueryList = window.matchMedia(query)
 
-    mediaQueryList.addEventListener('change', ev => {
-      set(ev.matches)
-    })
-  }
+  mediaQueryList.addEventListener('change', ev => {
+    set(ev.matches)
+  })
 
-  return {
-    store,
-    watch,
-  }
+  return store
 }
