@@ -18,7 +18,7 @@ export const browserApi = {
   date: wrapStoreFactory(
     () => createDateStore() as Store<Date | null>,
     null,
-  ),
+  )(),
   mediaQuery: {
     colorScheme: wrapStoreFactory(
       () => createEnumMqStore<'dark' | 'light'>(

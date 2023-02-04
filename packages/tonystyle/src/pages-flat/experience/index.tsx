@@ -4,11 +4,11 @@ import { mdiLoading } from '@mdi/js'
 
 import { Spinner } from 'src/shared/ui'
 
-export const home = {
-  path: '/',
+export const experience = {
+  path: '/experience',
   route: createRoute(),
   view: loadable(
-    async () => (await import('./page')).HomePage,
+    () => import('./page'),
     { fallback: <Spinner path={mdiLoading} /> },
   ),
 }

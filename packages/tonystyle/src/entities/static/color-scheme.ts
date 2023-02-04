@@ -6,10 +6,13 @@ import { color } from 'src/shared/ui/tokens/color'
 export namespace ColorScheme {
   // color scheme by time
 
-  type ColorSchemeByTime = 'light' | 'dark'
+  type ColorSchemeByTime = 'light' | 'dark' | null
+  // TODO date typings are losing somehow
   const colorSchemeByTime: Store<ColorSchemeByTime> = combine(
     browserApi.date,
-    date => date.store.getHours() < 6 || date.store.getHours() > 19 ? 'dark' : 'light',
+    date => date
+      ? (date as Date).getHours() < 6 || (date as Date).getHours() > 19 ? 'dark' : 'light'
+      : null,
   )
 
   // system color scheme (using media query)

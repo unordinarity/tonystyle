@@ -25,7 +25,7 @@ export const SpinnerIcon = stitches.styled(Icon, {
 
 export const Spinner: FunctionComponent<ComponentProps<typeof Icon>> = ({
   path = mdiSunglasses,
-  size = 64,
+  size = '64px',
   ...props
 }) => (
   <SpinnerIcon
