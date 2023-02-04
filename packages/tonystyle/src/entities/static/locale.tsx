@@ -5,7 +5,7 @@ import { browserApi } from 'src/shared/lib/browser-api'
 // system locale
 
 type LocaleSystem = string
-const localeSystemList: Store<Array<LocaleSystem>> = browserApi.navigator.languages.store
+const localeSystemList: Store<Array<LocaleSystem>> = browserApi.navigator.languages
 
 // available to use locales
 

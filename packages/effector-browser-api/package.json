@@ -1,5 +1,5 @@
 {
-  "name": "@tonystyle/effector-media-query",
+  "name": "@tonystyle/effector-browser-api",
   "version": "0.0.0",
   "private": true,
   "type": "module",

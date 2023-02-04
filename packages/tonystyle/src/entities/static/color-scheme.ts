@@ -2,7 +2,6 @@ import { combine, createEvent, createStore, Store } from 'effector'
 
 import { browserApi } from 'src/shared/lib/browser-api'
 import { color } from 'src/shared/ui/tokens/color'
-import { executeAfterRender } from '@tonystyle/react-ssr-helpers'
 
 export namespace ColorScheme {
   // color scheme by time
@@ -16,7 +15,7 @@ export namespace ColorScheme {
   // system color scheme (using media query)
 
   type ColorSchemeSystem = 'light' | 'dark' | null
-  const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme.store
+  const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme
 
   // available to render color schemes
 
@@ -56,17 +55,6 @@ export namespace ColorScheme {
     'dark': color.themesStitches.darkBright,
     'dark-dimmed': color.themesStitches.darkDim,
   }
-
-  const watch = () => {
-    colorSchemeCalculated.watch(theme => {
-      Object.values(color.themesStitches).forEach(themeClassName => {
-        document.body.classList.remove(themeClassName)
-      })
-      document.body.classList.add(themeToStitchesMap[theme])
-    })
-  }
-
-  executeAfterRender(watch)
 
   // exports
 

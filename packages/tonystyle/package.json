@@ -21,7 +21,7 @@
     "@mdx-js/react": "^2.2.1",
     "@radix-ui/colors": "^0.1.8",
     "@stitches/react": "^1.2.8",
-    "@tonystyle/effector-media-query": "0.0.0",
+    "@tonystyle/effector-browser-api": "0.0.0",
     "@tonystyle/effector-ssr-helpers": "0.0.0",
     "@tonystyle/react-ssr-helpers": "0.0.0",
     "@types/react": "^18.0.27",
