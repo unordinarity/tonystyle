@@ -6,12 +6,11 @@ import { random, sample } from 'lodash-es'
 
 import { useRenderingState } from '@tonystyle/react-ssr-helpers'
 
-import { UniversalLink } from 'src/shared/lib/universal-link'
-
 import { paperCard } from '../atoms/paper-card'
 import { PaperStack } from '../atoms/paper-stack'
 
 import { stitches } from '../stitches'
+import { Link } from 'atomic-router-react'
 
 // container
 
@@ -106,31 +105,26 @@ const PointAnchorLike = stitches.styled(Point, {
 type PointAnchorProps =
   ComponentProps<typeof PointAnchorLike> &
   { as?: never } &
-  ComponentProps<typeof UniversalLink>
+  ComponentProps<typeof Link>
 
 const PointAnchor: FunctionComponent<PointAnchorProps> = ({
   activeClassName,
-  activeStyle,
   ...props
 }) => {
   const renderingState = useRenderingState()
 
-  const randomStyle = useMemo(
-    () => (
-      renderingState === 'subsequent-client-render' ? {
+  const randomClass = useMemo(() => (
+    renderingState === 'subsequent-client-render'
+      ? stitches.css({
         rotate: `${sample([-1 * random(1, 4, true), random(1, 4, true)])}deg`,
-      } : {}),
-    [],
-  )
+      })().toString()
+      : null
+  ), [renderingState])
 
   return (
     <PointAnchorLike
-      as={UniversalLink}
-      activeClassName={clsx(activeClassName, pointActiveClassname)}
-      activeStyle={{
-        ...activeStyle,
-        ...randomStyle,
-      }}
+      as={Link}
+      activeClassName={clsx(activeClassName, pointActiveClassname, randomClass)}
       {...props}
     />
   )

@@ -53,11 +53,16 @@ export namespace ColorScheme {
   // listener
 
   const themeToStitchesMap: Record<ColorSchemeCalculated, string> = {
-    'light': color.themesStitches.lightBright,
-    'light-dimmed': color.themesStitches.lightDim,
-    'dark': color.themesStitches.darkBright,
-    'dark-dimmed': color.themesStitches.darkDim,
+    'light': color.themesStitches.lightBright.toString(),
+    'light-dimmed': color.themesStitches.lightDim.toString(),
+    'dark': color.themesStitches.darkBright.toString(),
+    'dark-dimmed': color.themesStitches.darkDim.toString(),
   }
+
+  colorSchemeCalculated.watch(scheme => {
+    Object.values(themeToStitchesMap).forEach(className => document.body.classList.remove(className))
+    document.body.classList.add(themeToStitchesMap[scheme])
+  })
 
   // exports
 

@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import { ComponentProps } from '@stitches/react'
+import { Link } from 'atomic-router-react'
 
 import { stitches } from 'src/shared/ui/stitches'
-import { UniversalLink } from 'src/shared/lib/universal-link'
 
 //
 
-const Anchor = stitches.styled(UniversalLink, {})
+const Anchor = stitches.styled(Link, {})
 
 //
 
