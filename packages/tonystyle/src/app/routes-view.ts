@@ -4,7 +4,7 @@ import { createHistoryRouter } from 'atomic-router'
 import { createRoutesView } from 'atomic-router-react'
 import { createBrowserHistory } from 'history'
 
-import { pages } from 'src/pages-flat'
+import { pages } from 'src/pages'
 
 const router = createHistoryRouter({
   routes: Object.values(pages).map(page => ({ route: page.route, path: page.path })),
