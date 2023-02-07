@@ -14,9 +14,12 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
     "lerna": "^6.4.1",
     "nx": "^15.5.2"
-  }
+  },
+  "engines": {
+    "node": ">=18",
+    "yarn": "1.22.19"
+  },
+  "packageManager": "yarn@1.22.19"
 }

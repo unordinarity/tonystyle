@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { useStore } from 'effector-react'
+import { Helmet } from 'react-helmet-async'
 
 import { SocialLink } from 'src/entities/static/social-link'
 import { locale } from 'src/entities/static/locale'
@@ -21,7 +22,7 @@ export const HeadTemplate: FunctionComponent<Props> = ({
   const localeList = useStore(locale.list)
 
   return (
-    <>
+    <Helmet>
       <title>{[title, 'Tony.Style'].filter(elem => !!elem).join(' | ')}</title>
       <meta property='description' content={description} />
 
@@ -44,6 +45,6 @@ export const HeadTemplate: FunctionComponent<Props> = ({
         <link key={language} rel='alternate' href={language} hrefLang={language} />
       ))}
       <link rel='alternate' href={locale.primary} hrefLang={locale.primary} />
-    </>
+    </Helmet>
   )
 }

@@ -9,14 +9,14 @@ const spinnerAnimation = stitches.keyframes({
     transform: 'rotate(0deg)',
   },
   to: {
-    transform: 'rotate(calc(3 * 360deg))',
+    transform: 'rotate(calc(2 * 360deg))',
   },
 })
 
 export const SpinnerIcon = stitches.styled(Icon, {
   color: 'white',
   animationDirection: 'normal',
-  animationDuration: '1s',
+  animationDuration: '0.5s',
   animationFillMode: 'forwards',
   animationIterationCount: 'infinite',
   animationName: `${spinnerAnimation}`,
@@ -25,7 +25,7 @@ export const SpinnerIcon = stitches.styled(Icon, {
 
 export const Spinner: FunctionComponent<ComponentProps<typeof Icon>> = ({
   path = mdiSunglasses,
-  size = 64,
+  size = '64px',
   ...props
 }) => (
   <SpinnerIcon

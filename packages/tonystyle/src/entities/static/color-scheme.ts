@@ -2,21 +2,23 @@ import { combine, createEvent, createStore, Store } from 'effector'
 
 import { browserApi } from 'src/shared/lib/browser-api'
 import { color } from 'src/shared/ui/tokens/color'
-import { executeAfterRender } from '@tonystyle/gatsby-ssg-helpers'
 
 export namespace ColorScheme {
   // color scheme by time
 
-  type ColorSchemeByTime = 'light' | 'dark'
+  type ColorSchemeByTime = 'light' | 'dark' | null
+  // TODO date typings are losing somehow
   const colorSchemeByTime: Store<ColorSchemeByTime> = combine(
     browserApi.date,
-    date => date.store.getHours() < 6 || date.store.getHours() > 19 ? 'dark' : 'light',
+    date => date
+      ? (date as Date).getHours() < 6 || (date as Date).getHours() > 19 ? 'dark' : 'light'
+      : null,
   )
 
   // system color scheme (using media query)
 
   type ColorSchemeSystem = 'light' | 'dark' | null
-  const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme.store
+  const colorSchemeSystem: Store<ColorSchemeSystem> = browserApi.mediaQuery.colorScheme
 
   // available to render color schemes
 
@@ -51,22 +53,18 @@ export namespace ColorScheme {
   // listener
 
   const themeToStitchesMap: Record<ColorSchemeCalculated, string> = {
-    'light': color.themesStitches.lightBright,
-    'light-dimmed': color.themesStitches.lightDim,
-    'dark': color.themesStitches.darkBright,
-    'dark-dimmed': color.themesStitches.darkDim,
+    'light': color.themesStitches.lightBright.toString(),
+    'light-dimmed': color.themesStitches.lightDim.toString(),
+    'dark': color.themesStitches.darkBright.toString(),
+    'dark-dimmed': color.themesStitches.darkDim.toString(),
   }
 
-  const watch = () => {
-    colorSchemeCalculated.watch(theme => {
-      Object.values(color.themesStitches).forEach(themeClassName => {
-        document.body.classList.remove(themeClassName)
-      })
-      document.body.classList.add(themeToStitchesMap[theme])
+  colorSchemeCalculated.watch(scheme => {
+    Object.values(themeToStitchesMap).forEach(className => {
+      if (themeToStitchesMap[scheme] === className) document.body.classList.add(className)
+      else document.body.classList.remove(scheme)
     })
-  }
-
-  executeAfterRender(watch)
+  })
 
   // exports
 
