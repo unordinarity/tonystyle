@@ -89,6 +89,26 @@ interface Theme {
 
 const themes = {
   stub: {
+    primaryBack: 'transparent',
+    primarySurface: 'transparent',
+    primaryOverlay: 'transparent',
+    primaryDecoration: 'transparent',
+    primaryContent: 'transparent',
+    primaryHighlight: 'transparent',
+    secondaryBack: 'transparent',
+    secondarySurface: 'transparent',
+    secondaryOverlay: 'transparent',
+    secondaryDecoration: 'transparent',
+    secondaryContent: 'transparent',
+    secondaryHighlight: 'transparent',
+    tertiaryBack: 'transparent',
+    tertiarySurface: 'transparent',
+    tertiaryOverlay: 'transparent',
+    tertiaryDecoration: 'transparent',
+    tertiaryContent: 'transparent',
+    tertiaryHighlight: 'transparent',
+  } as Theme,
+  debug: {
     primaryBack: skyDark.sky9,
     primarySurface: skyDark.sky9,
     primaryOverlay: skyDark.sky9,
@@ -193,6 +213,9 @@ const themes = {
 const themesStitches = {
   stub: createTheme({
     colors: { ...themes.stub },
+  }),
+  debug: createTheme({
+    colors: { ...themes.debug },
   }),
   darkBright: createTheme({
     colors: { ...themes.darkBright },

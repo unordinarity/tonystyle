@@ -1,4 +1,4 @@
-import { stitches } from '../stitches'
+import { stitches } from 'src/shared/ui'
 
 export const themeCss = stitches.globalCss({
   'body': {
@@ -8,5 +8,3 @@ export const themeCss = stitches.globalCss({
     color: '$primaryContent',
   },
 })
-
-themeCss()

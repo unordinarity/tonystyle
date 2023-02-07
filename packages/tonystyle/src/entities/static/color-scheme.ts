@@ -60,8 +60,10 @@ export namespace ColorScheme {
   }
 
   colorSchemeCalculated.watch(scheme => {
-    Object.values(themeToStitchesMap).forEach(className => document.body.classList.remove(className))
-    document.body.classList.add(themeToStitchesMap[scheme])
+    Object.values(themeToStitchesMap).forEach(className => {
+      if (themeToStitchesMap[scheme] === className) document.body.classList.add(className)
+      else document.body.classList.remove(scheme)
+    })
   })
 
   // exports

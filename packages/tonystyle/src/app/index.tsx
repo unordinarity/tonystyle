@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { HelmetProvider } from 'react-helmet-async'
 
-import { RoutesView } from './routes-view'
+import { App } from './app'
 
 const renderRoot = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -10,8 +9,6 @@ const renderRoot = ReactDOM.createRoot(
 
 renderRoot.render(
   <React.StrictMode>
-    <HelmetProvider>
-      <RoutesView />
-    </HelmetProvider>
+    <App />
   </React.StrictMode>,
 )
