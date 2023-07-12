@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
 
+import { Typography } from '@tonystyle/ui'
+
 import { HeadTemplate } from 'src/widgets/head-template'
 import { PageTemplate } from 'src/widgets/page-template'
-
-import { Typography } from 'src/shared/ui'
 
 const NotFound: FunctionComponent = () => (
   <>

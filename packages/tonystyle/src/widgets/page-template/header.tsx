@@ -8,40 +8,40 @@ import {
   mdiRocketLaunchOutline,
 } from '@mdi/js'
 
-import { Menu } from 'src/shared/ui'
+import { PaperMenu } from '@tonystyle/ui'
 import { pages } from 'src/pages'
 
-export const Header: FunctionComponent<ComponentProps<typeof Menu.Container>> = (props) => (
-  <Menu.Container {...props}>
-    <Menu.PointAnchor size='large' to={pages.home.route}>
-      <Menu.Text>Tony.Style</Menu.Text>
-    </Menu.PointAnchor>
-    <Menu.PointAnchor to={pages.blogHome.route}>
-      <Menu.Icon path={mdiBookOpenPageVariantOutline} />
-      <Menu.Text>Blog</Menu.Text>
-    </Menu.PointAnchor>
-    <Menu.PointAnchor to={pages.projects.route}>
-      <Menu.Icon path={mdiFloppy} />
-      <Menu.Text>Projects</Menu.Text>
-    </Menu.PointAnchor>
-    <Menu.PointAnchor to={pages.services.route}>
-      <Menu.Icon path={mdiHammerWrench} />
-      <Menu.Text>Services</Menu.Text>
-    </Menu.PointAnchor>
-    <Menu.PointAnchor to={pages.experience.route}>
-      <Menu.Icon path={mdiRocketLaunchOutline} />
-      <Menu.Text>Experience</Menu.Text>
-    </Menu.PointAnchor>
-    <Menu.PointAnchor to={pages.uses.route}>
-      <Menu.Icon path={mdiDevices} />
-      <Menu.Text>
+export const Header: FunctionComponent<ComponentProps<typeof PaperMenu.Container>> = (props) => (
+  <PaperMenu.Container {...props}>
+    <PaperMenu.PointAnchor size='large' to={pages.home.route}>
+      <PaperMenu.Text>Tony.Style</PaperMenu.Text>
+    </PaperMenu.PointAnchor>
+    <PaperMenu.PointAnchor to={pages.blogHome.route}>
+      <PaperMenu.Icon path={mdiBookOpenPageVariantOutline} />
+      <PaperMenu.Text>Blog</PaperMenu.Text>
+    </PaperMenu.PointAnchor>
+    <PaperMenu.PointAnchor to={pages.projects.route}>
+      <PaperMenu.Icon path={mdiFloppy} />
+      <PaperMenu.Text>Projects</PaperMenu.Text>
+    </PaperMenu.PointAnchor>
+    <PaperMenu.PointAnchor to={pages.services.route}>
+      <PaperMenu.Icon path={mdiHammerWrench} />
+      <PaperMenu.Text>Services</PaperMenu.Text>
+    </PaperMenu.PointAnchor>
+    <PaperMenu.PointAnchor to={pages.experience.route}>
+      <PaperMenu.Icon path={mdiRocketLaunchOutline} />
+      <PaperMenu.Text>Experience</PaperMenu.Text>
+    </PaperMenu.PointAnchor>
+    <PaperMenu.PointAnchor to={pages.uses.route}>
+      <PaperMenu.Icon path={mdiDevices} />
+      <PaperMenu.Text>
         Uses
-        <Menu.Tip>Work setup, IDE...</Menu.Tip>
-      </Menu.Text>
-    </Menu.PointAnchor>
-    <Menu.PointAnchor to={pages.about.route}>
-      <Menu.Icon path={mdiCoffeeOutline} />
-      <Menu.Text>About me</Menu.Text>
-    </Menu.PointAnchor>
-  </Menu.Container>
+        <PaperMenu.Tip>Work setup, IDE...</PaperMenu.Tip>
+      </PaperMenu.Text>
+    </PaperMenu.PointAnchor>
+    <PaperMenu.PointAnchor to={pages.about.route}>
+      <PaperMenu.Icon path={mdiCoffeeOutline} />
+      <PaperMenu.Text>About me</PaperMenu.Text>
+    </PaperMenu.PointAnchor>
+  </PaperMenu.Container>
 )

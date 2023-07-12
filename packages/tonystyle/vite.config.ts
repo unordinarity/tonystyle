@@ -9,14 +9,19 @@ const packageRoot = packageDirectorySync()
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react()]
-  ,
+    react()
+  ],
   resolve: {
     alias: {
       'src': path.resolve(packageRoot, './src'),
     },
   },
+
   build: {
+    emptyOutDir: true,
+    sourcemap: false,
+    minify: false,
+    target: 'esnext',
     dynamicImportVarsOptions: {
       exclude: [],
     },

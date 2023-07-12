@@ -6,12 +6,12 @@ import pRetry from 'p-retry'
 import pMinDelay from 'p-min-delay'
 import pTimeout from 'p-timeout'
 
-import { stitches } from 'src/shared/ui'
+import { stitches } from '@tonystyle/ui'
 
 const limitLoadablePage = <
-  T extends ComponentType
+  T extends any
 > (
-  dynamicImport: () => PromiseLike<T>,
+  dynamicImport: () => PromiseLike<ComponentType<T>>,
 ) => (
   () => pTimeout(
     pMinDelay(

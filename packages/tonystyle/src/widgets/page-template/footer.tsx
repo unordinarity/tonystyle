@@ -1,21 +1,22 @@
 import React, { ComponentProps, FunctionComponent } from 'react'
 
-import { Menu } from 'src/shared/ui'
+import { PaperMenu } from '@tonystyle/ui'
+
 import { SocialLink } from 'src/entities/static/social-link'
 
-export const Footer: FunctionComponent<ComponentProps<typeof Menu.Container>> = (props) => (
-  <Menu.Container {...props}>
+export const Footer: FunctionComponent<ComponentProps<typeof PaperMenu.Container>> = (props) => (
+  <PaperMenu.Container {...props}>
     {SocialLink.list.map(link => (
-      <Menu.PointAnchor
+      <PaperMenu.PointAnchor
         key={link.label}
         to={link.url}
         target='_blank'>
-        <Menu.Text>{link.label}</Menu.Text>
-        <Menu.Icon path={link.icon} />
-      </Menu.PointAnchor>
+        <PaperMenu.Text>{link.label}</PaperMenu.Text>
+        <PaperMenu.Icon path={link.icon} />
+      </PaperMenu.PointAnchor>
     ))}
-    <Menu.Point size='large'>
-      <Menu.Text>Contacts</Menu.Text>
-    </Menu.Point>
-  </Menu.Container>
+    <PaperMenu.Point size='large'>
+      <PaperMenu.Text>Contacts</PaperMenu.Text>
+    </PaperMenu.Point>
+  </PaperMenu.Container>
 )

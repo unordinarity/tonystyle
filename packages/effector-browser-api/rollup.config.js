@@ -1,25 +1,30 @@
 import { defineConfig } from 'rollup'
-import typescript from '@rollup/plugin-typescript'
-import dts from 'rollup-plugin-dts'
+import typescriptPlugin from '@rollup/plugin-typescript'
+import typescriptDtsPlugin from 'rollup-plugin-dts'
+import { readPackageUpSync } from 'read-pkg-up'
 
-const plugins = [
-  typescript(),
-]
+const packageJson = readPackageUpSync({ normalize: true }).packageJson
 
 export default defineConfig([{
   input: 'src/index.ts',
-  plugins: [...plugins],
+  plugins: [typescriptPlugin()],
   output: [{
     file: 'dist/index.js',
     format: 'esm',
   }],
-  external: ['effector', 'lodash-es', 'patronum'],
+  external: [
+    ...Object.keys(packageJson.devDependencies ?? {}),
+    ...Object.keys(packageJson.peerDependencies ?? {}),
+  ],
 }, {
   input: 'src/index.ts',
-  plugins: [...plugins, dts()],
+  plugins: [typescriptPlugin(), typescriptDtsPlugin()],
   output: {
     file: 'dist/index.d.ts',
     format: 'es',
   },
-  external: ['effector', 'lodash-es', 'patronum'],
+  external: [
+    ...Object.keys(packageJson.devDependencies ?? {}),
+    ...Object.keys(packageJson.peerDependencies ?? {}),
+  ],
 }])

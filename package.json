@@ -14,11 +14,11 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^6.4.1",
-    "nx": "^15.5.2"
+    "lerna": "^6.6.1",
+    "nx": "^15.8.9"
   },
   "engines": {
-    "node": ">=18",
+    "node": ">=18.16.0",
     "yarn": "1.22.19"
   },
   "packageManager": "yarn@1.22.19"

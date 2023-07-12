@@ -7,9 +7,9 @@ import { HelmetProvider } from 'react-helmet-async'
 
 import { pages } from 'src/pages'
 
-import './reset.css'
+import 'modern-css-reset'
 import './reset-patch.css'
-import './reset-spa.css'
+import './spa.css'
 import './critical.css'
 
 import { themeCss } from './theme'

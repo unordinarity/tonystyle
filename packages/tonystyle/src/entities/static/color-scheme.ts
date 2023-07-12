@@ -1,7 +1,8 @@
 import { combine, createEvent, createStore, Store } from 'effector'
 
+import { color } from '@tonystyle/ui'
+
 import { browserApi } from 'src/shared/lib/browser-api'
-import { color } from 'src/shared/ui/tokens/color'
 
 export namespace ColorScheme {
   // color scheme by time

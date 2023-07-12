@@ -2,16 +2,16 @@ import React, { ComponentProps, FunctionComponent } from 'react'
 import { mdiLightbulbOutline, mdiTranslate } from '@mdi/js'
 import { useStore } from 'effector-react'
 
-import { Menu } from 'src/shared/ui'
+import { PaperMenu } from '@tonystyle/ui'
 
 import { ColorScheme } from 'src/entities/static/color-scheme'
 
-export const Settings: FunctionComponent<ComponentProps<typeof Menu.Container>> = (props) => {
+export const Settings: FunctionComponent<ComponentProps<typeof PaperMenu.Container>> = (props) => {
   const colorSchemeValue = useStore(ColorScheme.store)
 
   return (
-    <Menu.Container {...props}>
-      <Menu.PointButton
+    <PaperMenu.Container {...props}>
+      <PaperMenu.PointButton
         onClick={() => {
           ColorScheme.set({
             'dark': 'dark-dimmed',
@@ -20,19 +20,19 @@ export const Settings: FunctionComponent<ComponentProps<typeof Menu.Container>> 
             'light-dimmed': 'dark',
           }[colorSchemeValue] as ColorScheme.Model)
         }}>
-        <Menu.Icon path={mdiLightbulbOutline} />
-        <Menu.Text>
+        <PaperMenu.Icon path={mdiLightbulbOutline} />
+        <PaperMenu.Text>
           Colors
-          <Menu.Tip>Too much red?</Menu.Tip>
-        </Menu.Text>
-      </Menu.PointButton>
-      <Menu.PointButton>
-        <Menu.Icon path={mdiTranslate} />
-        <Menu.Text>
+          <PaperMenu.Tip>Too much red?</PaperMenu.Tip>
+        </PaperMenu.Text>
+      </PaperMenu.PointButton>
+      <PaperMenu.PointButton>
+        <PaperMenu.Icon path={mdiTranslate} />
+        <PaperMenu.Text>
           Language
-          <Menu.Tip>English / Русский</Menu.Tip>
-        </Menu.Text>
-      </Menu.PointButton>
-    </Menu.Container>
+          <PaperMenu.Tip>English / Русский</PaperMenu.Tip>
+        </PaperMenu.Text>
+      </PaperMenu.PointButton>
+    </PaperMenu.Container>
   )
 }

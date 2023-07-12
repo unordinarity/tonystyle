@@ -1,4 +1,4 @@
-import { stitches } from 'src/shared/ui'
+import { stitches } from '@tonystyle/ui'
 
 export const themeCss = stitches.globalCss({
   'body': {

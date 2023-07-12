@@ -5,7 +5,7 @@ import { PageTemplate } from 'src/widgets/page-template'
 
 const BlogCycleId: FunctionComponent = () => (
   <>
-    <HeadTemplate title='PostId' />
+    <HeadTemplate title='CycleId' />
     <PageTemplate>
       <h1>CycleId</h1>
     </PageTemplate>

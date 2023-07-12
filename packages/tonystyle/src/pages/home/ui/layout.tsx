@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactNode } from 'react'
-import { stitches } from 'src/shared/ui'
+
+import { stitches } from '@tonystyle/ui'
 
 const Container = stitches.styled('div', {
   width: '100%',

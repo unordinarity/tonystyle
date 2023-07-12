@@ -13,6 +13,7 @@ Prerequisites
 
 - Node.js 18
 - Yarn v1
+- Patience
 
 Commands
 
@@ -29,7 +30,7 @@ Commands
 
 # Boring technical details
 
-Project is monorepo with simple hierarchy: `tonystyle` depends on all secondary packages.
+Project is monorepo with simple hierarchy: `@tonystyle/tonystyle` depends on all secondary packages.
 
 ### Whole project
 
@@ -42,30 +43,22 @@ Project is monorepo with simple hierarchy: `tonystyle` depends on all secondary 
 Main package, application entry point
 
 - structured and organized with [Feature-Sliced Design](https://feature-sliced.design/)
-- rendered by [react](https://reactjs.org/)
-- controlled by [effector](https://effector.dev/)
-- styled with [stitches](https://stitches.dev/)
-- built via [vite](https://vitejs.dev/)
+- rendered by [React](https://reactjs.org/)
+- controlled by [Effector](https://effector.dev/)
+- styled with [Stitches](https://stitches.dev/)
+- built via [Vite](https://vitejs.dev/)
 
 ### [effector-browser-api](./packages/effector-browser-api)
 
 Effector wrapper for media queries matching
 
-### [effector-ssr-helpers](./packages/effector-ssr-helpers)
+### [ui](./packages/ui)
 
-Wrappers for handling side-effects in effector
-
-### [graphql-static-server](./packages/graphql-static-server)
-
-Server for delivering static data as graphql
-
-### [react-ssr-helpers](./packages/react-ssr-helpers)
-
-React utilities for SSR-related conditional rendering and side-effect handling
+Totally unique, matchless, incomparable and the most beautiful UI kit (made especially for this project)
 
 # Development
 
 If you have any suggestions, feel free to open discussion, create pull request or call me in the middle of the night. No
 rules, no linters, no cry.
 
-[shields-fsd-image]: https://img.shields.io/badge/Feature--Sliced-Design-FFF?logoWidth=20&style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAXCAYAAADtNKTnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAwSURBVHgB7dKxCQAACAPBxP13VnsLCxEEcxs8CT1hyHAFn+UwoaF1luhslXKW3MkJjdwgCeNkJQsAAAAASUVORK5CYII=
+[shields-fsd-image]: https://img.shields.io/badge/Feature--Sliced-Design-FFF?logoWidth=20&style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAAALFAAACxQGJ1n/vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/SURBVHgB7dKxCgAgCIThs/d/51JoNQIdDrxvqMXlR4FmFs92KDIX/wI7JSdDN+eHtkxIycnQvMNW8hN/crsDc5QgGX9NvT0AAAAASUVORK5CYII=

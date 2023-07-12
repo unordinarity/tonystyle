@@ -1,7 +1,7 @@
 import React, { ComponentProps, FunctionComponent } from 'react'
 import { VariantProps } from '@stitches/react'
 
-import { stitches } from 'src/shared/ui'
+import { stitches } from '@tonystyle/ui'
 
 import { Header } from './header'
 import { Footer } from './footer'

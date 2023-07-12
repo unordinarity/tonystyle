@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
 
+import { DrawnCard, Typography } from '@tonystyle/ui'
+
 import { PageTemplate } from 'src/widgets/page-template'
 import { HeadTemplate } from 'src/widgets/head-template'
-
-import { DrawnFrame, Typography } from 'src/shared/ui'
 
 import { Layout } from './ui/layout'
 
@@ -16,9 +16,9 @@ const HomePage: FunctionComponent = () => (
           <Typography.Heading as='h1'>
             Hero
           </Typography.Heading>
-          <DrawnFrame>
+          <DrawnCard>
             Hello, I'm Tony, software engineer
-          </DrawnFrame>
+          </DrawnCard>
         </Layout.Section>
         <Layout.Section>
           <Typography.Heading as='h1'>
