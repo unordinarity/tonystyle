@@ -8,6 +8,8 @@
 package-lock.json
 yarn.lock
 
+.nx/cache
+
 ### Windows template
 # Windows thumbnail cache files
 Thumbs.db

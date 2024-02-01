@@ -7,8 +7,6 @@ export const stitches = createStitches({
   theme: {
     fonts: font.families,
     fontWeights: font.weights,
-    colors: {
-      ...color.themes.stub,
-    },
+    colors: color.palette,
   },
 })

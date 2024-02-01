@@ -1,25 +1,25 @@
 {
-  "name": "tonystyle",
+  "name": "frontend-church",
   "private": true,
   "scripts": {
-    "develop": "nx develop @tonystyle/tonystyle",
+    "develop": "nx develop @frontend-church/site",
     "format": "nx run-many --target=format",
     "lint": "nx run-many --target=lint",
     "test": "nx run-many --target=test",
-    "build": "nx build @tonystyle/tonystyle",
-    "serve": "nx serve @tonystyle/tonystyle",
+    "build": "nx build @frontend-church/site",
+    "serve": "nx serve @frontend-church/site",
     "clean": "nx run-many --target=clean"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^6.6.1",
-    "nx": "^15.8.9"
+    "lerna": "^7.4.2",
+    "nx": "^17.1.2"
   },
   "engines": {
-    "node": ">=18.16.0",
-    "yarn": "1.22.19"
+    "node": ">=20.9.0",
+    "yarn": "1.22.21"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.21"
 }

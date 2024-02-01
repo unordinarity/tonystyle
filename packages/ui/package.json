@@ -1,40 +1,43 @@
 {
-  "name": "@tonystyle/ui",
+  "name": "@frontend-church/ui",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "types": "src/index.d.ts",
-  "module": "src/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "scripts": {
     "develop": "exit 0",
     "format": "exit 0",
     "lint": "exit 0",
     "test": "exit 0",
-    "build": "exit 0",
+    "build": "rollup -c rollup.config.js",
     "serve": "exit 0",
-    "clean": "exit 0"
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "atomic-router-react": "^0.8.3",
     "react": "^18.2.0"
   },
   "dependencies": {
-    "@fontsource/ibm-plex-mono": "^5.0.5",
-    "@fontsource/ibm-plex-sans": "^5.0.5",
-    "@fontsource/ibm-plex-sans-condensed": "^5.0.5",
-    "@mdi/js": "^7.2.96",
-    "@mdi/react": "^1.6.1",
-    "@radix-ui/colors": "^1.0.0",
+    "@fontsource/ibm-plex-mono": "^5.0.8",
+    "@fontsource/ibm-plex-sans": "^5.0.18",
+    "@fontsource/ibm-plex-sans-condensed": "^5.0.8",
+    "@radix-ui/colors": "^3.0.0",
     "@stitches/react": "^1.2.8",
-    "clsx": "^1.2.1",
+    "clsx": "^2.1.0",
     "lodash-es": "^4.17.21",
     "tinycolor2": "^1.6.0",
-    "type-fest": "^3.13.0"
+    "type-fest": "^4.10.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.14",
-    "atomic-router-react": "^0.8.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-url": "^8.0.2",
+    "@types/react": "^18.2.48",
     "react": "^18.2.0",
-    "typescript": "^5.1.6"
+    "read-pkg-up": "^11.0.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.6",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.3.3"
   }
 }

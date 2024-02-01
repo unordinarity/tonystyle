@@ -1,4 +1,4 @@
-# Tony.Style
+# Frontend.Church
 
 Business card, CV, personal blog, petproject playground
 
@@ -38,7 +38,7 @@ Project is monorepo with simple hierarchy: `@tonystyle/tonystyle` depends on all
 - package management [yarn v1](https://classic.yarnpkg.com/)
 - monorepo management: [nx](https://nx.dev/) and [lerna](https://lerna.js.org/)
 
-### [tonystyle](./packages/tonystyle)
+### [tonystyle](./packages/site)
 
 Main package, application entry point
 
